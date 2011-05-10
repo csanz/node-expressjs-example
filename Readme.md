@@ -2,7 +2,7 @@
 
 ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created by [@csanz](htt://twitter.com/csanz) inspiried by [@tjholowaychuk](http://twitter.com/@tjholowaychuk)'s [finance](https://github.com/visionmedia/finance) application
 
-[Video](http://www.screenr.com/g59)
+[Watch Video Here!](http://www.screenr.com/g59)
 
 ![Screenshot](https://github.com/csanz/expressjs-blog/raw/master/public/sample.png)
 
