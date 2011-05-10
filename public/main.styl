@@ -1,0 +1,108 @@
+@import 'nib'
+
+light = #a9a9a9
+lighter = #eee
+blue = #00ABFA
+dark = #222
+
+// mixins
+
+field_style()
+  margin: 5px 0
+  padding: 8px 10px
+  outline: none
+  border-radius: 5px
+  border: 1px solid light
+  color: light
+  &:focus
+    box-shadow: 0 1px 1px 0 rgba(blue, 0.6), 0 0 3px 1px rgba(blue, 0.3)
+
+button()
+  bold-button(glow: blue)
+
+smooth()
+  -webkit-font-smoothing: antialiased
+
+borderfy()
+  border: 1px solid lighter
+
+// globals
+
+.hide
+  display: none
+  
+p#header
+  width 800px
+  font 16px 'helvetica neue', helvetica, arial, sans-serif
+  color light
+  smooth()
+
+body
+  padding 5px 40px 40px 40px
+  font 14px 'helvetica neue', helvetica, arial, sans-serif
+  smooth()
+
+// wrapper
+
+.wrap
+  width 800px
+
+.left
+  float left
+  width 400px
+
+.right
+  float right
+  width 390px
+  
+// forms
+
+input[type='text']
+  field_style()
+
+textarea
+  field_style()
+
+button,
+input[type='button'],
+input[type='submit']
+  button()
+
+fieldset
+  border 1px solid light
+  border-radius 5px
+  width 350px
+
+.label
+  font 10px 'helvetica neue', helvetica, arial, sans-serif
+  smooth()
+
+// blog post
+
+.post
+  border 1px solid light
+  border-radius 5px
+  margin: 5px 0
+  padding: 8px 10px
+  smooth()
+
+span.body
+  color dark
+  smooth()
+
+//everythign else
+
+ul#flash
+  fixed top 10px left 15px
+  z-index 200
+  margin 0
+  padding 0
+  li
+    list-style: none
+    margin 8px 0
+    padding 8px 15px
+    border 1px solid light
+    border-radius 5px
+    font-size 12px
+    background white
+    box-shadow 0 0 4px lighter 

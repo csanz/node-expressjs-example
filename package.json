@@ -1,0 +1,21 @@
+{
+    "name": "expressjs-blog"
+  , "version": "0.0.1"
+  , "description": "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery 5/10/2011"
+  , "keywords": []
+  , "author": "Guillermo Rauch <guillermo@learnboost.com>"
+  , "dependencies": {
+        "express": "2.x"
+      , "express-messages": "0.0.1"
+      , "express-resource": ">= 0.0.1"
+      , "express-expose": ">= 0.0.1"
+      , "stylus": "0.9.2"
+      , "mongoose": "1.1.23"
+      , "jade": "0.9.x"
+      , "github-flavored-markdown": "1.0.0"
+      , "stylus": "0.11.x"
+      , "nib": "0.0.x"
+    }
+  , "main": "index"
+  , "engines": { "node": "0.4.x" }
+}
