@@ -1,6 +1,6 @@
 {
     "name": "expressjs-blog"
-  , "version": "0.0.1"
+  , "version": "0.1.2"
   , "description": "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery 5/10/2011"
   , "keywords": []
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"

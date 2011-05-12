@@ -35,7 +35,7 @@ div.all
      p
       div#posts
         - if (posts.length)
-            != partial('post', { collection: posts }) 
+            != partial('_post', { collection: posts }) 
         - else
           p#noposts
             strong no posts

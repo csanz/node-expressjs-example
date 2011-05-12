@@ -1,6 +1,6 @@
 # expressjs-blog
 
-ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created by [@csanz](htt://twitter.com/csanz) inspiried by [@tjholowaychuk](http://twitter.com/@tjholowaychuk)'s [finance](https://github.com/visionmedia/finance) application
+ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created by [@csanz](htt://twitter.com/csanz) inspiried by [@tjholowaychuk](http://twitter.com/@tjholowaychuk)'s [finance](https://github.com/visionmedia/finance) application  
 
 [Watch Video Here!](http://www.screenr.com/g59)
 
@@ -10,9 +10,9 @@ ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created 
 
 - Install node, npm, mongodb
 
-- Run `npm bundle .` in the project directory
+- Run `npm bundle` in the project directory
 
-- Run `sudo node index.js` and point your browser to http://localhost:4000
+- Run `sudo node .` and point your browser to http://localhost:4000
 
 ## License 
 
