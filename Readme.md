@@ -4,7 +4,7 @@ ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created 
 
 [Watch Video Here!](http://www.screenr.com/g59)
 
-![Screenshot](https://github.com/csanz/expressjs-blog/raw/master/public/sample.png)
+![Screenshot](https://github.com/csanz/expressjs-blog/raw/master/public/images/sample.png)
 
 ## Installation
 
