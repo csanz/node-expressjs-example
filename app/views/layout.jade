@@ -1,0 +1,12 @@
+!!! 5
+html
+  head
+    title ExpressJS-Blog
+    script(src: 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    script(src: '/javascript/main.js')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body
+    nav
+    #main
+      != messages()
+      != body
