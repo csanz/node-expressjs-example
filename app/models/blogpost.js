@@ -35,4 +35,3 @@ BlogPost.pre('init', function(next){
   console.log('initializing...');
   next();
 });
-*/

@@ -3,7 +3,7 @@
   , "version": "0.1.2"
   , "description": "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery 5/10/2011"
   , "keywords": []
-  , "author": "Guillermo Rauch <guillermo@learnboost.com>"
+  , "author": "Christian Sanz <chrissanz@gmail.com>"
   , "dependencies": {
         "express": "2.x"
       , "express-messages": "0.0.1"
