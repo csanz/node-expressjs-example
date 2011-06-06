@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 node_modules/
+=======
+node_modules
+*.css
+>>>>>>> 78189f514b0a2ebc4cb254185d2de54476224ca3
