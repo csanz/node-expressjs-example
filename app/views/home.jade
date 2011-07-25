@@ -2,35 +2,37 @@ ul#flash
 
 div.all
   h2 ExpressJS-Blog
-    p#header
-      | ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. 
-      | Created by 
-      a(href='http://twitter.com/csanz') @csanz 
-      | inspiried by 
-      a(href='http://twitter.com/tjholowaychuk') @tjholowaychuk
-      |'s 
-      a(href='https://github.com/visionmedia/finance') finance 
-      | application
-    div.hide
-      div.load
-        img(src: '/animation.gif');
+  #header
+    | ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. 
+    | Created by 
+    a(href='http://twitter.com/csanz') @csanz 
+    | inspiried by 
+    a(href='http://twitter.com/tjholowaychuk') @tjholowaychuk
+    |'s 
+    a(href='https://github.com/visionmedia/finance') finance 
+    | application. 
+    a(href='https://github.com/csanz/expressjs-blog') Click Here
+    |  to download/clone
+  div.hide
+    div.load
+      img(src: '/animation.gif');
   div.wrap
     div.left
      p
-      form(action: '/create', method: 'post', id: 'create')
+      form(action= '/create', method= 'post', id= 'create')
         fieldset
           p
             div.label
               label Title
             div.field
-              input(type: 'text', name: 'post[title]')
+              input(type = 'text', name= 'post[title]')
           p
             div.label
               label Body
             div.field
-              textarea(name: 'post[body]')
+              textarea(name = 'post[body]')
           div
-            input.button(type: 'submit', value: 'Save!');
+            input.button(type = 'submit', value = 'Save!')
     div.right
      p
       div#posts

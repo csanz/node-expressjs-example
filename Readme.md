@@ -4,17 +4,17 @@ ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created 
 
 [Watch Video Here!](http://www.screenr.com/g59)
 
-![Screenshot](https://github.com/csanz/expressjs-blog/raw/master/public/images/sample.png)
-
 [See Demo Here](http://node-blog-example.herokuapp.com/)
+
+![Screenshot](https://github.com/csanz/expressjs-blog/raw/master/public/images/sample.png)
 
 ## Installation
 
 - Install node, npm, mongodb
 
-- Run `npm bundle` in the project directory
+- Run `npm install` in the project directory
 
-- Run `sudo node .` and point your browser to http://localhost:4000
+- Run `node .` and point your browser to http://localhost:4000
 
 [See Node.js + Heroku Instructions Here](http://node-example-csanz.herokuapp.com/)
 

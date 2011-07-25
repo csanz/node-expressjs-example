@@ -14,6 +14,16 @@ var BlogPost = module.exports = new Schema({
   , date_updated  : { type: Date } 
 })
 
+/**
+ * Get Latest Posts
+ *
+ * @param {Callback} callback
+ *
+ * @api public
+ */
+BlogPost.statics.getLatestPosts = function(callback){
+  return this.find().sort('_id','descending').limit(15).find({}, callback)
+}
 
 //this happens before it saves, they are called middleware
 

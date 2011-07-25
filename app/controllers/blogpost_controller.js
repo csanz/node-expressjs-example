@@ -12,12 +12,8 @@
  */
 
 exports.index = function(req, res, db, next){
-  var BlogPost = db.main.model('BlogPost');
-  BlogPost.find().sort('_id','descending').limit(15).find({}, function(err, posts){
-    if (err) return next(err);
-    res.render('home', {
-      posts: posts
-    })
+  res.render('home', {
+    posts: db.posts.getLatestPosts()
   });
 }
 
@@ -34,12 +30,14 @@ exports.index = function(req, res, db, next){
  */
 
 exports.create = function(req, res, db, next){
+  
   var BlogPost = db.main.model('BlogPost');
-  var post = new BlogPost(req.param('post'));
-  post.save(function(err){
-    if (err) res.send({ error: err.message });
-    res.partial('post', { object: post }, function(err, html){
-      if (err) res.send({ error: err.message });
+  var _post = new BlogPost(req.param('post'));
+  
+  _post.save(function(err){
+    if (err) return next(err)
+    res.partial('post', { object: _post }, function(err, html){
+      if (err) return next(err)
       res.send({ prepend: html, to: '#posts' });
     });
   });
