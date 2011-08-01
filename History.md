@@ -1,6 +1,12 @@
 TO-DO
   * Add friggin validation
-  
+
+0.1.5
+
+ * Added slick color stuff to the terminal (http://cl.ly/0X1e1s3P3R3k2c090i3I)
+ * Added repl debugging samples (See Readme)
+ * Added new environments file (to support multiple environments duh)
+
 0.1.4
   
   * Upgraded Jade to 0.13.x

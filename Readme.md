@@ -10,35 +10,24 @@ ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created 
 
 ## Installation
 
-- Install node, npm, mongodb
-
-- Run `npm install` in the project directory
-
-- Run `node .` and point your browser to http://localhost:4000
+      Install node, npm, mongodb
+      Run `npm install` in the project directory
+      Run `node .` and point your browser to http://localhost:4000
 
 [See Node.js + Heroku Instructions Here](http://node-example-csanz.herokuapp.com/)
 
-## License 
+You'll need to add a new config entry using heroku terminal utility. 
 
-(The MIT License)
+      heroku config:add NODE_ENV=production
 
-Copyright (c) 2011 Christian Sanz &lt;chrissanz@gmail.com&gt;
+## Debugging Mongoose
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+      $node
+      > var mongoose = require('mongoose')
+      > var db = mongoose.connect('mongodb://localhost/blogsample')
+      > db.model('BlogPost', require('./app/models/blogpost'))
+      { [Function: model] getLatestPosts: [Function], modelName: 'BlogPost' }
+      > db.model('BlogPost').findOne({}, function(err, data){ console.log(data) })
+      { model: { [Function: model] getLatestPosts: [Function], modelName: 'BlogPost' }, op: 'findOne' }
+      > initializing...
+      { is_active: true, date_created: Thu, 12 May 2011 06:05:57 GMT, title: 'Testing', body: 'Hello Blog Post', _id: 4dcb78c5218ef26905000025 }

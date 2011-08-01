@@ -1,6 +1,6 @@
 {
     "name"        : "expressjs-blog"
-  , "version"     : "0.1.4"
+  , "version"     : "0.1.5"
   , "homepage"    : "http://node-blog-example.herokuapp.com/"
   , "description" : "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery"
   , "repository"  : "git@github.com:csanz/expressjs-blog.git"
