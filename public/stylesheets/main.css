@@ -1,6 +1,6 @@
 body {
   padding: 5px 40px 40px 40px;
-  font: 14px "helvetica neue", helvetica, arial, sans-serif;
+  font: 14px 'helvetica neue', helvetica, arial, sans-serif;
   background: url("/images/background.png");
   -webkit-font-smoothing: antialiased;
 }
@@ -17,7 +17,7 @@ body {
   border-radius: 5px;
   padding: 20px;
   width: 760px;
-  font: 18px "helvetica neue", helvetica, arial, sans-serif;
+  font: 18px 'helvetica neue', helvetica, arial, sans-serif;
   color: #a9a9a9;
   -webkit-font-smoothing: antialiased;
 }
@@ -47,7 +47,7 @@ body {
   float: right;
   width: 390px;
 }
-input[type="text"] {
+input[type='text'] {
   margin: 5px 0;
   padding: 8px 10px;
   outline: none;
@@ -57,10 +57,10 @@ input[type="text"] {
   border: 1px solid #a9a9a9;
   color: #a9a9a9;
 }
-input[type="text"]:focus {
-  -webkit-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.6), 0 0 3px 1px rgba(0,171,250,0.3);
-  -moz-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.6), 0 0 3px 1px rgba(0,171,250,0.3);
-  box-shadow: 0 1px 1px 0 rgba(0,171,250,0.6), 0 0 3px 1px rgba(0,171,250,0.3);
+input[type='text']:focus {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.60), 0 0 3px 1px rgba(0,171,250,0.30);
+  -moz-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.60), 0 0 3px 1px rgba(0,171,250,0.30);
+  box-shadow: 0 1px 1px 0 rgba(0,171,250,0.60), 0 0 3px 1px rgba(0,171,250,0.30);
 }
 textarea {
   margin: 5px 0;
@@ -73,13 +73,13 @@ textarea {
   color: #a9a9a9;
 }
 textarea:focus {
-  -webkit-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.6), 0 0 3px 1px rgba(0,171,250,0.3);
-  -moz-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.6), 0 0 3px 1px rgba(0,171,250,0.3);
-  box-shadow: 0 1px 1px 0 rgba(0,171,250,0.6), 0 0 3px 1px rgba(0,171,250,0.3);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.60), 0 0 3px 1px rgba(0,171,250,0.30);
+  -moz-box-shadow: 0 1px 1px 0 rgba(0,171,250,0.60), 0 0 3px 1px rgba(0,171,250,0.30);
+  box-shadow: 0 1px 1px 0 rgba(0,171,250,0.60), 0 0 3px 1px rgba(0,171,250,0.30);
 }
 button,
-input[type="button"],
-input[type="submit"] {
+input[type='button'],
+input[type='submit'] {
   margin: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -93,13 +93,13 @@ input[type="submit"] {
   font-size: 11px;
   background: #333;
   background: url(gradient-data-uri(create-gradient-image(25px, top)));
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4d4d4d), color-stop(1, #333));
-  background: -webkit-linear-gradient(top, #4d4d4d 0%, #333 100%);
-  background: -moz-linear-gradient(top, #4d4d4d 0%, #333 100%);
-  background: linear-gradient(top, #4d4d4d 0%, #333 100%);
-  -webkit-box-shadow: inset 0 1px 1px 0 #6c6c6c;
-  -moz-box-shadow: inset 0 1px 1px 0 #6c6c6c;
-  box-shadow: inset 0 1px 1px 0 #6c6c6c;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999), color-stop(1, #333));
+  background: -webkit-linear-gradient(top, #999 0%, #333 100%);
+  background: -moz-linear-gradient(top, #999 0%, #333 100%);
+  background: linear-gradient(top, #999 0%, #333 100%);
+  -webkit-box-shadow: inset 0 1px 1px 0 #c2c2c2;
+  -moz-box-shadow: inset 0 1px 1px 0 #c2c2c2;
+  box-shadow: inset 0 1px 1px 0 #c2c2c2;
   border: 1px solid #333;
   line-height: 1;
   padding: 7px 10px 8px 10px;
@@ -108,69 +108,69 @@ input[type="submit"] {
   color: #fff;
 }
 button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
 button.hover,
-input[type="button"].hover,
-input[type="submit"].hover {
-#383838
-  background: #383838;
+input[type='button'].hover,
+input[type='submit'].hover {
+#474747
+  background: #474747;
   background: url(gradient-data-uri(create-gradient-image(25px, top)));
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4d4d4d), color-stop(1, #383838));
-  background: -webkit-linear-gradient(top, #4d4d4d 0%, #383838 100%);
-  background: -moz-linear-gradient(top, #4d4d4d 0%, #383838 100%);
-  background: linear-gradient(top, #4d4d4d 0%, #383838 100%);
-  -webkit-box-shadow: inset 0 1px 1px 0 #838383;
-  -moz-box-shadow: inset 0 1px 1px 0 #838383;
-  box-shadow: inset 0 1px 1px 0 #838383;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999), color-stop(1, #474747));
+  background: -webkit-linear-gradient(top, #999 0%, #474747 100%);
+  background: -moz-linear-gradient(top, #999 0%, #474747 100%);
+  background: linear-gradient(top, #999 0%, #474747 100%);
+  -webkit-box-shadow: inset 0 1px 1px 0 #e0e0e0;
+  -moz-box-shadow: inset 0 1px 1px 0 #e0e0e0;
+  box-shadow: inset 0 1px 1px 0 #e0e0e0;
 }
 button:active,
-input[type="button"]:active,
-input[type="submit"]:active,
+input[type='button']:active,
+input[type='submit']:active,
 button.active,
-input[type="button"].active,
-input[type="submit"].active {
+input[type='button'].active,
+input[type='submit'].active {
 #292929
   background: #292929;
   background: url(gradient-data-uri(create-gradient-image(25px, top)));
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #292929), color-stop(1, #3e3e3e));
-  background: -webkit-linear-gradient(top, #292929 0%, #3e3e3e 100%);
-  background: -moz-linear-gradient(top, #292929 0%, #3e3e3e 100%);
-  background: linear-gradient(top, #292929 0%, #3e3e3e 100%);
-  -webkit-box-shadow: inset 0 -1px 1px 0 #5c5c5c;
-  -moz-box-shadow: inset 0 -1px 1px 0 #5c5c5c;
-  box-shadow: inset 0 -1px 1px 0 #5c5c5c;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #292929), color-stop(1, #949494));
+  background: -webkit-linear-gradient(top, #292929 0%, #949494 100%);
+  background: -moz-linear-gradient(top, #292929 0%, #949494 100%);
+  background: linear-gradient(top, #292929 0%, #949494 100%);
+  -webkit-box-shadow: inset 0 -1px 1px 0 #adadad;
+  -moz-box-shadow: inset 0 -1px 1px 0 #adadad;
+  box-shadow: inset 0 -1px 1px 0 #adadad;
 }
 button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
 button.hover,
-input[type="button"].hover,
-input[type="submit"].hover {
-  -webkit-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.6), inset 0 -1px 0 0 #00abfa;
-  -moz-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.6), inset 0 -1px 0 0 #00abfa;
-  box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.6), inset 0 -1px 0 0 #00abfa;
+input[type='button'].hover,
+input[type='submit'].hover {
+  -webkit-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.60), inset 0 -1px 0 0 #00abfa;
+  -moz-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.60), inset 0 -1px 0 0 #00abfa;
+  box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.60), inset 0 -1px 0 0 #00abfa;
 }
 button:active,
-input[type="button"]:active,
-input[type="submit"]:active,
+input[type='button']:active,
+input[type='submit']:active,
 button.active,
-input[type="button"].active,
-input[type="submit"].active {
-  -webkit-box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.6);
-  -moz-box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.6);
-  box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.6);
+input[type='button'].active,
+input[type='submit'].active {
+  -webkit-box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.60);
+  -moz-box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.60);
+  box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.60);
 }
 button:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
+input[type='button']:focus,
+input[type='submit']:focus,
 button.focus,
-input[type="button"].focus,
-input[type="submit"].focus {
+input[type='button'].focus,
+input[type='submit'].focus {
   outline: none;
-  -webkit-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.6), inset 0 -1px 0 0 #00abfa, 0 0 3px 1px rgba(0,171,250,0.5);
-  -moz-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.6), inset 0 -1px 0 0 #00abfa, 0 0 3px 1px rgba(0,171,250,0.5);
-  box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.6), inset 0 -1px 0 0 #00abfa, 0 0 3px 1px rgba(0,171,250,0.5);
+  -webkit-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.60), inset 0 -1px 0 0 #00abfa, 0 0 3px 1px rgba(0,171,250,0.50);
+  -moz-box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.60), inset 0 -1px 0 0 #00abfa, 0 0 3px 1px rgba(0,171,250,0.50);
+  box-shadow: inset 0 0 3px 1px rgba(0,171,250,0.60), inset 0 -1px 0 0 #00abfa, 0 0 3px 1px rgba(0,171,250,0.50);
 }
 fieldset {
   border: 1px solid #a9a9a9;
@@ -180,7 +180,7 @@ fieldset {
   width: 350px;
 }
 .label {
-  font: 14px "helvetica neue", helvetica, arial, sans-serif;
+  font: 14px 'helvetica neue', helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 .post {

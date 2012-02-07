@@ -1,6 +1,12 @@
 TO-DO
   * Add friggin validation
 
+0.1.6
+ 
+ * Upgraded Jade, Stylus and Mongoose
+ * Added constructor to controller
+ * Cleaned up routes 
+
 0.1.5
 
  * Added slick color stuff to the terminal (http://cl.ly/0X1e1s3P3R3k2c090i3I)

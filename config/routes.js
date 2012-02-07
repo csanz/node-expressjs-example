@@ -1,14 +1,6 @@
-/**
- * Load controllers
- */
-
-const blog   = require('../app/controllers/blogpost_controller');
-
-/**
- * Exports
- */
- 
 module.exports = function(app){
+
+  var blog   = require('../app/controllers/blogpost_controller')(app);
   
   //  Load database and pass it down to the controllers
   
@@ -16,11 +8,11 @@ module.exports = function(app){
 
   //  Load Root
   
-  app.get('/', function (req, res, next){ blog.index(req, res, db, next) }); // *Root
+  app.get('/', blog.index); // *Root
   
   //  Load Blog Controller + Routes
   
-  app.get('/posts', function (req, res, next){ blog.index(req, res, db, next) }); 
-  app.post('/create', function (req, res, next){ blog.create(req, res, db, next) }); 
+  app.get('/posts', blog.index); 
+  app.post('/create', blog.create); 
 
 }

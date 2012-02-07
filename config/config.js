@@ -59,7 +59,7 @@ module.exports = function(app){
         'main': db
       , 'posts': db.model('BlogPost')
     })
-    app.set('version', '0.1.4');
+    app.set('version', '0.1.6');
   });
    
   

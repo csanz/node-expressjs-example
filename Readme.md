@@ -12,7 +12,7 @@ ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery. Created 
 
       Install node, npm, mongodb
       Run `npm install` in the project directory
-      Run `node .` and point your browser to http://localhost:4000
+      Run `node .` and point your browser to http://localhost:3000
 
 [See Node.js + Heroku Instructions Here](http://node-example-csanz.herokuapp.com/)
 

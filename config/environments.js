@@ -4,18 +4,18 @@ module.exports = function(app){
  
   app.configure('local', function (){
     this
-      .set('version','0.1.5')
       .set('host', 'localhost')
       .set('port', port)
-      .set('env','local')
+      .set('ENV','local')
   }); 
   
   app.configure('production', function (){
     this
-      .set('version','0.1.5')
       .set('host', 'node-blog-example.herokuapp.com')
       .set('port', port)
-      .set('env','local')
+      .set('ENV','production')
   });
+
+  return app
   
 }
