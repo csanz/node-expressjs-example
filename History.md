@@ -4,8 +4,8 @@ TO-DO
 0.1.6
  
  * Upgraded Jade, Stylus and Mongoose
- * Added constructor to controller
- * Cleaned up routes 
+ * Added constructor to controller and included db var at the top
+ * Cleaned up routes and removed the long function callback
 
 0.1.5
 
