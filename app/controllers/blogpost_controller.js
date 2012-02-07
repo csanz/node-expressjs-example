@@ -1,3 +1,5 @@
+// Set all global variables 
+
 var controller = {}
   , app
   , db
