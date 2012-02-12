@@ -11,11 +11,13 @@
       , "express-resource"  : "0.2.4"
       , "express-expose"    : "0.2.1"
       , "express-mongoose"  : "0.0.x"
+      , "express-expose"    : "0.2.2"
       , "stylus"            : "0.13.x"
       , "mongoose"          : "2.4.7"
       , "jade"              : "0.19.x"
       , "stylus"            : "0.22.x"
       , "nib"               : "0.3.x"
+      , "pusher"            : "0.0.x"
     }
   , "main"    : "./index.js"
   , "engines" : { 

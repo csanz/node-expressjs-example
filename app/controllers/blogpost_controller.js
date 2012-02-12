@@ -1,6 +1,7 @@
 // Set all global variables 
 
-var controller = {}
+var pusher = require('pusher')
+  , controller = {}
   , app
   , db
 
@@ -17,7 +18,6 @@ module.exports = function (_app) {
  *
  * @param {Request Object} req
  * @param {Response Object} res
- * @param {Databaes Object} db
  * @param {Callback} next
  *
  * @api public
@@ -26,6 +26,17 @@ module.exports = function (_app) {
  */
 
 controller.index = function(req, res, next){
+
+  // expose pusher key
+  
+  res.expose({ 
+      app_key   : req.app.set('pusher_key') 
+    , channel   : 'blog_post'
+    , events    : 'post'
+  }, 'PUSHER')
+
+  // render template
+
   res.render('home', {
     posts: db.posts.getLatestPosts()
   });
@@ -36,7 +47,6 @@ controller.index = function(req, res, next){
  *
  * @param {Request Object} req
  * @param {Response Object} res
- * @param {Databaes Object} db
  * @param {Callback} next
  *
  * @api public
@@ -45,14 +55,23 @@ controller.index = function(req, res, next){
 
 controller.create = function(req, res, next){
   
-  var BlogPost = db.main.model('BlogPost');
-  var _post = new BlogPost(req.param('post'));
-  
-  _post.save(function(err){
+  var BlogPost = db.main.model('BlogPost')
+    , Post     = new BlogPost(req.param('post'));
+
+  Post.save(postSaved)
+
+  function postSaved(err){
     if (err) return next(err)
-    res.partial('post', { object: _post }, function(err, html){
+    res.partial('post', { object: Post }, function(err, html){
       if (err) return next(err)
+
+      // Send the hook
+
+      req.app.emit('event:create_blog_post', { prepend: html, to: '#posts' }, req)
+
+      // Send response
+
       res.send({ prepend: html, to: '#posts' });
     });
-  });
+  }
 }

@@ -10,7 +10,8 @@ const express       = require('express')
     , config        = require('./config')
     , routes        = require('./routes')
     , environments  = require('./environments')
-    , errors        = require('./errors');
+    , errors        = require('./errors')
+    , hooks         = require('./hooks')
 
 /**
  * Exports
@@ -41,6 +42,10 @@ module.exports = function () {
   //  Load error routes + pages
   
   errors(app);
+
+  //  Load hooks
+
+  hooks(app)
   
   return app;
   

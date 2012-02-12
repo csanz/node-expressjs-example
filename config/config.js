@@ -4,6 +4,7 @@
 
 const express   = require('express')
     , stylus    = require('stylus')
+    , expose    = require('express-expose')
     , mongoose  = require('mongoose')
     , nib       = require('nib');
 

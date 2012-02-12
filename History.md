@@ -1,6 +1,12 @@
 TO-DO
   * Add friggin validation
 
+0.1.7
+
+ * Added express-expose support
+ * Added Pusher Support
+ * Added Hooks 
+
 0.1.6
  
  * Upgraded Jade, Stylus and Mongoose

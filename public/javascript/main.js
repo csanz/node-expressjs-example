@@ -2,14 +2,19 @@
 
 $(function(){
   
+  var pusher = new Pusher(PUSHER["app_key"]);
+  var channel = pusher.subscribe(PUSHER["channel"]);
+
+  channel.bind(PUSHER["events"], function(data) {
+    response(data);
+  });
   // create data
   
   $('#create').submit(function(){
     var data = $(this).serialize();
     $.post('/create', data, function(res){
-      response(res);
       if(!res.error){
-        
+        // Do something!
       }
     });
     return false;
