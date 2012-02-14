@@ -14,11 +14,12 @@ dark = #222
 // blog post
 
 .post
-  border 1px solid light
-  border-radius 5px
-  margin: 5px 0
   padding: 8px 10px
   smooth()
+  roundedges(#e0e0e5, #c8c7cc)
+  text-shadow  1px 1px 0 white
+  margin-bottom 10px
+  shade()
 
 span.body
   color dark
@@ -40,3 +41,7 @@ ul#flash
     font-size 12px
     background white
     box-shadow 0 0 4px lighter 
+
+h2
+  text-shadow 1px 1px 0 white
+  color #58575A
