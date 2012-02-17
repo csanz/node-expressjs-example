@@ -209,6 +209,11 @@ span.body {
   color: #222;
   -webkit-font-smoothing: antialiased;
 }
+.delete {
+  float: right;
+  color: #666;
+  text-decoration: none;
+}
 ul#flash {
   position: fixed;
   top: 10px;
