@@ -75,3 +75,35 @@ controller.create = function(req, res, next){
     });
   }
 }
+
+
+/**
+ * Delete BlogPost
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {Callback} next
+ *
+ * @api public
+ * @url /delete
+ */
+
+controller.delete = function(req, res, next){
+  
+  var BlogPost = db.main.model('BlogPost');
+
+  BlogPost.remove( {_id : req.param('id')} , postRemoved);
+
+  function postRemoved(err){
+    if (err) return next(err)
+
+      // Send the hook
+      
+      req.app.emit('event:delete_blog_post', {remove: true, target : req.param('id') }, req)
+
+      // Send response
+
+      res.send({ remove: true,  target : req.param('id') });
+  }
+
+}

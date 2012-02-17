@@ -14,5 +14,6 @@ module.exports = function(app){
   
   app.get('/posts', blog.index); 
   app.post('/create', blog.create); 
+  app.post('/delete', blog.delete); 
 
 }
