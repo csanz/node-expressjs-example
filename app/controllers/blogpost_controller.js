@@ -78,6 +78,38 @@ controller.create = function(req, res, next){
 
 
 /**
+ * Update BlogPost
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {Callback} next
+ *
+ * @api public
+ * @url /delete
+ */
+
+controller.update = function(req, res, next){
+  
+  var BlogPost = db.main.model('BlogPost')
+    , Post     = req.param('post');
+
+  BlogPost.update( {_id : Post.id } , Post, postUpdated);
+
+  function postUpdated(err){
+    if (err) return next(err)
+
+      // Send the hook
+      
+      req.app.emit('event:update_blog_post', {update: Post, target : Post.id }, req)
+
+      // Send response
+
+      res.send({ update: Post, target : Post.id });
+  }
+}
+
+
+/**
  * Delete BlogPost
  *
  * @param {Request Object} req
@@ -105,5 +137,4 @@ controller.delete = function(req, res, next){
 
       res.send({ remove: true,  target : req.param('id') });
   }
-
 }

@@ -25,10 +25,20 @@ span.body
   color dark
   smooth()
 
-.delete
-  float: right
+.delete,
+.edit
   color: #666
+  cursor: pointer
+  float: right
+  margin-left: 5px
   text-decoration: none
+
+.edit-mode
+  .hide
+    display: block
+  .show
+    display: none
+  
 
 //everythign else
 

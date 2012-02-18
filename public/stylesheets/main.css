@@ -7,6 +7,9 @@ body {
 .hide {
   display: none;
 }
+.show {
+  display: block;
+}
 #header {
   background-color: #fff;
   border: 1px solid darkGray;
@@ -209,10 +212,19 @@ span.body {
   color: #222;
   -webkit-font-smoothing: antialiased;
 }
-.delete {
-  float: right;
+.delete,
+.edit {
   color: #666;
+  cursor: pointer;
+  float: right;
+  margin-left: 5px;
   text-decoration: none;
+}
+.edit-mode .hide {
+  display: block;
+}
+.edit-mode .show {
+  display: none;
 }
 ul#flash {
   position: fixed;

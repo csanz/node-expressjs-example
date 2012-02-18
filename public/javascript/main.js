@@ -23,15 +23,32 @@ $(function(){
   
   //delete data
 
-  $('#posts').delegate('a', 'click', function() {
-    var data = { id : $(this).parent().attr('id') };
-    $.post('/delete', data, function(res){
-      if(!res.error){
-        // Do something!
+  $('#posts')
+    .delegate('a', 'click', function() {
+      if($(this).hasClass('delete')){
+        var data = { id : $(this).parent().attr('id') };
+        $.post('/delete', data, function(res){
+          if(!res.error){
+            // Do something!
+          }
+        });
       }
-    });
-    return false;
-  });
+      else if($(this).hasClass('edit')){
+        $(this).next('form').toggleClass('edit-mode');
+      }
+      return false;
+    })
+    .delegate('form', 'submit', function(){
+      $(this).toggleClass('edit-mode');
+      var data = $(this).serialize();
+      $.post('/update', data, function(res){
+        if(!res.error){
+          // Do something!
+        }
+      });
+      return false;
+    })
+  ;
 
 })
 
@@ -51,10 +68,27 @@ function response(res) {
   if (res.error) {
     notify('error', res.error);
   } else {
-    if (res.message) notify(res.message);
-    if (res.prepend) $(res.to).prepend(res.prepend).hide().fadeIn();
-    if (res.append) $(res.to).append(res.append);
-    if (res.remove) $('#'+res.target).fadeOut(function(){$('#'+res.target).remove()});
-    if ($('#noposts')) $('#noposts').remove();
+    if (res.message) {
+      notify(res.message); 
+    }
+    if (res.prepend) {
+      $(res.to).prepend(res.prepend).hide().fadeIn();
+    }
+    if (res.append) {
+      $(res.to).append(res.append);
+    }
+    if (res.update) {
+      var post = $('#'+res.target);
+      post.find('h3').text(res.update.title);
+      post.find('p').text(res.update.body);
+    }
+    if (res.remove) {
+      $('#'+res.target).fadeOut(function(){
+        $('#'+res.target).remove();
+      });
+    }
+    if ($('#noposts')) {
+      $('#noposts').remove();
+    }
   }
 }
