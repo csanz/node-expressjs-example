@@ -79,8 +79,11 @@ function response(res) {
     }
     if (res.update) {
       var post = $('#'+res.target);
+      // need to change this part for something more optimized
       post.find('h3').text(res.update.title);
+      post.find('input[type="text"]').attr('value', res.update.title);
       post.find('p').text(res.update.body);
+      post.find('textarea').text(res.update.body);
     }
     if (res.remove) {
       $('#'+res.target).fadeOut(function(){
