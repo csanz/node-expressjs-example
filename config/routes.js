@@ -13,6 +13,8 @@ module.exports = function(app){
   //  Load Blog Controller + Routes
   
   app.get('/posts', blog.index); 
-  app.post('/create', blog.create); 
+  app.post('/create', blog.create);
+  app.post('/update', blog.update);
+  app.post('/delete', blog.delete);
 
 }
