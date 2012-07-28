@@ -34,6 +34,7 @@ $(function(){
         });
       }
       else if($(this).hasClass('edit')){
+        console.log($(this).next('form'))
         $(this).next('form').toggleClass('edit-mode');
       }
       return false;

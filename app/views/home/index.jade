@@ -1,0 +1,20 @@
+script!= javascript
+.row
+  .span4
+    h2 Add new
+    form.well(action= '/create', method= 'post', id= 'create')
+      fieldset
+        .controls
+          label Title
+          input.span3(type="text", name= 'post[title]')
+          label Body 
+          textarea.span3(name = 'post[body]')
+      .form-actions
+        input.btn(type = 'submit', value = 'Save!')
+  .span4
+    h2 Posts
+    - if (posts.length)
+        #posts
+          != partial('_post', { collection: posts }) 
+    - else
+      .alert.alert-error no posts

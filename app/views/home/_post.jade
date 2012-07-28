@@ -1,0 +1,11 @@
+.well(id=post.id)
+   a.delete(href='#') &times;
+   a.edit(href='#') &#9998;
+   form(action='/update', method='post')
+      h3.show= post.title
+      input.hide(type='text', value=post.title, name='post[title]')
+      span.body
+       p.show= post.body
+       textarea.span3.hide(name='post[body]')= post.body
+      input.span2(type='hidden', value=post.id, name='post[id]')
+      button.btn.hide(type='submit') Save changes

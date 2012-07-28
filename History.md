@@ -1,6 +1,11 @@
 TO-DO
   * Add friggin validation
 
+0.1.8
+
+ * Added Bootrap support
+ * Cleaned up the code 
+
 0.1.7
 
  * Added express-expose support

@@ -1,0 +1,56 @@
+!!! 5
+html(lang="en")
+  head
+    title Express-Blog
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="ExpressJS-Blog")
+    meta(name="author", content="you")
+    script(src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    script(src="http://js.pusher.com/1.11/pusher.min.js")
+    link(href="/stylesheets/bootstrap.css", rel="stylesheet")
+    style
+      body{ 
+        padding-top: 60px;
+      }
+    link(href="/stylesheets/bootstrap-responsive.css", rel="stylesheet")
+    script(src= '/javascript/main.js')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel="shortcut icon", href="/images/ico/favicon.ico")
+    link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/images/ico/apple-touch-icon-144-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/images/ico/apple-touch-icon-114-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="72x72", href="/images/ico/apple-touch-icon-72-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", href="/images/ico/apple-touch-icon-57-precomposed.png")
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle="collapase", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href="/") Express-Blog
+          .nav-collapse
+            ul.nav
+              li.active
+                a(href="/") Home
+              li 
+                a(href="/about") About
+              li 
+                a(href="https://github.com/csanz/expressjs-blog") Fork
+              li
+                a(href="http://twitter.github.com/bootstrap/") Bootstrap
+    .container
+      != body
+    script(src="/javascript/jquery.js")
+    script(src="/javascript/bootstrap-transition.js")
+    script(src="/javascript/bootstrap-alert.js")
+    script(src="/javascript/bootstrap-modal.js")
+    script(src="/javascript/bootstrap-dropdown.js")
+    script(src="/javascript/bootstrap-scrollspy.js")
+    script(src="/javascript/bootstrap-tab.js")
+    script(src="/javascript/bootstrap-tooltip.js")
+    script(src="/javascript/bootstrap-popover.js")
+    script(src="/javascript/bootstrap-button.js")
+    script(src="/javascript/bootstrap-collapse.js")
+    script(src="/javascript/bootstrap-carousel.js")
+    script(src="/javascript/bootstrap-typeahead.js")

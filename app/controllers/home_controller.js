@@ -13,6 +13,13 @@ module.exports = function (_app) {
   return controller
 }
 
+controller.load = function(template, req, res, next){
+  if(!template) return next(new Error("missing template"))
+  res.render(template, {
+      layout     : '../layout/index'
+  })
+}
+
 /**
  * Index BlogPost
  *
@@ -37,9 +44,11 @@ controller.index = function(req, res, next){
 
   // render template
 
-  res.render('home', {
-    posts: db.posts.getLatestPosts()
-  });
+  res.render('home/index', {
+      layout     : '../layout/index'
+    , posts   : db.posts.getLatestPosts()
+  })
+
 }
 
 /**
@@ -54,7 +63,7 @@ controller.index = function(req, res, next){
  */
 
 controller.create = function(req, res, next){
-  
+
   var BlogPost = db.main.model('BlogPost')
     , Post     = new BlogPost(req.param('post'));
 
@@ -62,7 +71,7 @@ controller.create = function(req, res, next){
 
   function postSaved(err){
     if (err) return next(err)
-    res.partial('post', { object: Post }, function(err, html){
+    res.partial('home/post', { object: Post }, function(err, html){
       if (err) return next(err)
 
       // Send the hook
@@ -71,7 +80,7 @@ controller.create = function(req, res, next){
 
       // Send response
 
-      res.send({ prepend: html, to: '#posts' });
+      return res.send({ prepend: html, to: '#posts' });
     });
   }
 }
