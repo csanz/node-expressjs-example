@@ -1,6 +1,6 @@
 # expressjs-blog
 
-ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery.  
+ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery and Twitter Bootstrap  
 
 ![Screenshot](https://github.com/csanz/expressjs-blog/raw/master/public/images/sample.png)
 
