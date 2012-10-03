@@ -11,12 +11,14 @@
       , "express-resource"  : "0.2.4"
       , "express-mongoose"  : "0.0.x"
       , "express-expose"    : "0.2.2"
-      , "stylus"            : "0.13.x"
-      , "mongoose"          : "2.5.10"
       , "jade"              : "0.25.x"
-      , "stylus"            : "0.22.x"
+      , "juan-rss"          : "0.1.x"
+      , "mongoose"          : "2.5.10"
       , "nib"               : "0.3.x"
       , "pusher"            : "0.0.x"
+      , "stylus"            : "0.22.x"
+
+
     }
   , "main"    : "./index.js"
   , "engines" : { 
