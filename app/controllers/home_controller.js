@@ -45,8 +45,8 @@ controller.index = function(req, res, next){
   // render template
 
   res.render('home/index', {
-      layout     : '../layout/index'
-    , posts   : db.posts.getLatestPosts()
+      layout     : 'layout/index'
+    , posts      : db.posts.getLatestPosts()
   })
 
 }
