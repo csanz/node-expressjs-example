@@ -1,20 +1,20 @@
-var Pusher   = require('pusher')
+/*var Pusher   = require('pusher')*/
 
 module.exports = function(app){
  
   var port = process.env.PORT || 4000
-    , push;
+/*    , push;*/
  
   app.configure('local', function (){
 
     // Setup pusher
 
-    push = new Pusher({
+/*    push = new Pusher({
         appId  : '15248'
       , appKey : '4ba149ec25cf69edff9c'
       , secret : 'fd9b0ace66816292bfe6'
     })
-
+*/
     this
       .set('host', 'localhost')
       .set('port', port)
@@ -25,11 +25,11 @@ module.exports = function(app){
 
     // Setup pusher
 
-    push = new Pusher({
+/*    push = new Pusher({
         appId  : 'YOUR_PUSHER_APP_ID'
       , appKey : 'YOUR_PUSHER_APP_KEY'
       , secret : 'YOUR_PUSHER_SECRET_KEY'
-    })
+    })*/
 
     this
       .set('host', 'node-blog-example.herokuapp.com')
@@ -38,9 +38,9 @@ module.exports = function(app){
   });
 
   // Set pusher
-  app
+/*  app
     .set('pusher', { 'blog_post': push.channel('blog_post') })
-    .set('pusher_key', push.options.appKey)
+    .set('pusher_key', push.options.appKey)*/
 
   return app
   

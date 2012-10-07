@@ -25,7 +25,5 @@ console.log('\x1b[36mSample Blog\x1b[90m v%s\x1b[0m running as \x1b[1m%s\x1b[0m 
   app.set('version'),
   app.set('env'),
   app.set('host'),
-  app.address().port
+  port
 );
-
-

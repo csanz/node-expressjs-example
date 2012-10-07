@@ -21,32 +21,25 @@ module.exports = function () {
 
   //  Create Server
 
-  const app = express.createServer()
+  const app = express()
   
-  //  Load Mongoose Models
-  
+  //  Load Mongoose Models  
   models(app)
   
-  //  Load Expressjs config
-  
+  //  Load Expressjs config  
   config(app);
   
-  //  Load Environmental Settings
-  
+  //  Load Environmental Settings  
   environments(app);
 
-  //  Load routes config
-  
+  //  Load routes config  
   routes(app);
   
-  //  Load error routes + pages
-  
+  //  Load error routes + pages  
   errors(app);
 
   //  Load hooks
-
   hooks(app)
   
-  return app;
-  
+  return app;  
 };

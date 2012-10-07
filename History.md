@@ -1,5 +1,13 @@
 TO-DO
-  * Add friggin validation
+ * Add friggin validation
+ * Add Themes, Plugin and Widget Support
+
+0.2.0
+ * Heavy refactoring
+ * Upgraded NodeJS to 0.8.x 
+ * Upgraded ExpressJS to 3.0.0rc4
+ * Upgraded jQuery requeriment to 1.8.2
+ * Upgraded Bootstrap to 2.1.1
 
 0.1.8
 
