@@ -1,18 +1,16 @@
 /**
  * Load dependencies
  */
-
-const mongoose = require('mongoose');
-
-require('express-mongoose');  
+var mongoose = require('mongoose');
 
 /**
  * Exports
  */
  
-module.exports = function(){
+module.exports = function(app){
   
-  //  Load Blog Post model
-  
-  mongoose.model('BlogPost', require('../app/models/blogpost'));
+  // Load Blog Post model  
+  mongoose.model('BlogPost', require('../app/models/blogpost_model'));
+
+  return app;
 };

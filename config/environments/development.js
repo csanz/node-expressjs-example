@@ -14,10 +14,8 @@ const express   = require('express')
 module.exports = function(app){
 
   //  Setup DB Connection
-
-  var dblink = process.env.MONGOHQ_URL || 'mongodb://localhost/blogsample'
-
-  const db  = mongoose.createConnection(dblink)
+  var dblink  = process.env.MONGOHQ_URL || 'mongodb://localhost/blogsample'
+  const db    = mongoose.createConnection(dblink)
 
   //  Compile Hack for Stylus
 

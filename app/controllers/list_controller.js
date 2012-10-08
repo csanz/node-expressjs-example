@@ -25,11 +25,23 @@ controller.home = function(req, res, next){
 
   // TODO: See how does templates apply here
   //       For now, we do this:
-  s.template = 'home'
+  s.template = 'home';
 
-  // For now, I'm just rendering the last
-  // 15 posts list...
-  res.render( s.template
-            , { vars : s }
-  );
+  db.model('BlogPost').getLatestPosts(gotPosts);
+
+  function gotPosts (err, posts) {
+    if (err) return next();
+
+    s.posts = posts;
+
+    render();
+  };
+
+  function render () {
+    // For now, I'm just rendering the last
+    // 15 posts list...
+    res.render( s.template
+              , { vars : s }
+    );
+  };
 };
