@@ -1,8 +1,8 @@
 # TO-DO
 
  * Add friggin validation
+ * Post Editor ala Tumblr
  * Add Themes, Plugin and Widget Support
-
  * Define the way of having variable themes & templates
    (ala wordpress).
 
