@@ -8,13 +8,13 @@ var Schema   = require('mongoose').Schema
  */
 
 var BlogPost = module.exports = new Schema({
-    title         : { type: String,     required  : true }
-  , body          : { type: String,     required  : true }
-  , author        : ObjectId
+    title         : { type: String,           required  : true }
+  , body          : { type: String,           required  : true }
+  , author        : { type: Schema.ObjectId,  ref       : 'BlogAuthor', index: true }
   , tags          : [String]
   , categories    : [String]
-  , is_active     : { type: Boolean,    default   : true }
-  , date_created  : { type: Date,       default   : Date.now }
+  , is_active     : { type: Boolean,          default   : true }
+  , date_created  : { type: Date,             default   : Date.now }
   , date_updated  : { type: Date }
 });
 

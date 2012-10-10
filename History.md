@@ -25,7 +25,6 @@
 # Before Pushing
 
   * Completar
-    * Modelo Autor
     * List author
     * List cat
     * List tag
