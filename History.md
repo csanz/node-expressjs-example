@@ -20,8 +20,13 @@
  * Autentication for admin, editors (twitter oauth)
  * Add DISQUS Support on comments
  * Admin Panel
+ * RSS Support
 
 # Before Pushing
+
+---> Database Test, usa el before y el after, para solo concentrarse en
+      testear la lectura.
+---> Crea datos, visualizalos en la home, haz el test!!
 
   * Completar
     * Modelo Autor
@@ -31,6 +36,10 @@
     * 3 model tests (aut, cat, tag)
     * 4 tests via routes
     * admin + new post (basic version)
+    * Configuración adecuada del development mode y stub para production
+    * Use redis for admin sessions
+
+  * Subir lo que llevo a nodejs.cl
 
 # Versions
 

@@ -20,7 +20,7 @@ module.exports = function (_app) {
  *
  * @url    GET    /
  */
-controller.home = function(req, res, next){
+controller.home = function(req, res, next) {
   var s = {};
 
   // TODO: See how does templates apply here

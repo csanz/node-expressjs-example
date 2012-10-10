@@ -21,44 +21,49 @@ var express             = require('express')
 describe('Database', DatabaseTests);
 
 function DatabaseTests () {
+  before(generateTestData);
+
   it('Should Get a List of Latest Posts', ListOfLatestPostTest);
 
   function ListOfLatestPostTest (done) {
-    var exec = require("child_process").exec;
-    var cmd  = 'mongo test/mongo_scripts/generate_test_data.js';
+    var db = app.get('db');
+    db.model('BlogPost').getLatestPosts(gotPosts);
 
-    exec(cmd, function (error, stdout, stderr) {
-      if (error || stderr) {
-        console.log(error || stderr);
-        throw 'Error on Data Generation for Test!'
-      } else {
-        onDataGenerated();
+    function gotPosts (err, posts) {
+      if (err) {
+        console.log(err)
+        throw 'Error on Data Query for Test!'
       }
-    });
 
-    function onDataGenerated () {
-      // We check if we can retrieve the latest post with our model
-      var db = app.get('db');
-      db.model('BlogPost').getLatestPosts(gotPosts);
+      // A little check
+      posts[9].title.should.include('Post');
+      posts[9].categories.length.should.equal(3);
+      posts[9].tags.length.should.equal(3);
 
-      function gotPosts (err, posts) {
-        if (err) {
-          console.log(err)
-          throw 'Error on Data Query for Test!'
-        }
-
-        // A little check
-        posts[9].title.should.include('Post');
-        posts[9].categories.length.should.equal(3);
-        posts[9].tags.length.should.equal(3);
-
-        done();
-      };
+      done();
     };
   };
+
+  after(removeTestData);
 };
 
-after(removeTestData);
+/**
+ * Auxiliar Test Functions
+ */
+
+function generateTestData (done) {
+  var exec = require("child_process").exec;
+  var cmd  = 'mongo test/mongo_scripts/generate_test_data.js';
+
+  exec(cmd, function (error, stdout, stderr) {
+    if (error || stderr) {
+      console.log(error || stderr);
+      throw 'Error on Data Generation for Test!'
+    } else {
+      done();
+    }
+  });
+};
 
 function removeTestData (done) {
   this.timeout(3000)
