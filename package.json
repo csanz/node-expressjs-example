@@ -6,7 +6,8 @@
   , "repository"  : "git@github.com:csanz/expressjs-blog.git"
   , "author"      : "Christian Sanz <chrissanz@gmail.com>"
   , "dependencies": {
-      "express"           : "3.0.0rc4"
+      "cheerio"           : "0.10.1"
+    , "express"           : "3.0.0rc4"
     , "jade"              : "0.25.x"
     , "juan-rss"          : "0.1.x"
     , "mongoose"          : "2.5.10"
