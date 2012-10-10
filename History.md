@@ -24,8 +24,6 @@
 
 # Before Pushing
 
----> Database Test, usa el before y el after, para solo concentrarse en
-      testear la lectura.
 ---> Crea datos, visualizalos en la home, haz el test!!
 
   * Completar

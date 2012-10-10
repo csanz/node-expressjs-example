@@ -12,34 +12,26 @@ module.exports = function (_app) {
 }
 
 /**
- * @param   req   {Object}
- * @param   res   {Object}
- * @param   next  {Object}
+ * @param   req     {Object}
+ * @param   res     {Object}
+ * @param   next    {Object}
  *
- * @api     private
+ * @api     public
  *
- * @url    GET    /
+ * @url     GET     /
  */
 controller.home = function(req, res, next) {
   var s = {};
-
-  // TODO: See how does templates apply here
-  //       For now, we do this:
   s.template = 'home';
-
   db.model('BlogPost').getLatestPosts(gotPosts);
 
   function gotPosts (err, posts) {
     if (err) return next();
-
     s.posts = posts;
-
     render();
   };
 
   function render () {
-    // For now, I'm just rendering the last
-    // 15 posts list...
     res.render( s.template
               , { vars : s }
     );

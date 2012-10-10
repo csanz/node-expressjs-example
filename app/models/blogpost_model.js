@@ -7,9 +7,6 @@ var Schema   = require('mongoose').Schema
  * Schema
  */
 
-// TODO: Commentaries (of course!)
-// TODO: Author model
-
 var BlogPost = module.exports = new Schema({
     title         : { type: String,     required  : true }
   , body          : { type: String,     required  : true }

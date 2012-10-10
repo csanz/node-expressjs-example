@@ -16,6 +16,7 @@ block body
       h2 Posts
       - if (vars.posts && vars.posts.length)
           #posts
-            != partial('_post', { collection: posts }) 
+            each post in vars.posts
+              include _post
       - else
         .alert.alert-error no posts

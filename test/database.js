@@ -10,13 +10,11 @@
  */
 
 // Module Dependencies
-var should              = require('should')
-  , superagent          = require('superagent');
+var should              = require('should');
 
 // Dependencies to test components
 process.env.NODE_ENV    = 'test';
-var express             = require('express')
-  , app                 = require('../config/app')();
+var app                 = require('../config/app')();
 
 describe('Database', DatabaseTests);
 
