@@ -29,6 +29,7 @@ function databaseTests () {
   it('Should get a list of blog authors', listOfAuthors);
   it('Should get the data of an author by their id', dataOfAnAuthorByID);
   it('Should get the data of an author by their username', dataOfAnAuthorByUsername);
+  it('Should get the latest posts by author username', listOfLatestPostsByAuthorUsername);
 
   function listOfLatestPost (done) {
     db.model('BlogPost').getLatestPosts(gotPosts);
@@ -52,8 +53,16 @@ function databaseTests () {
       if (err) return errorHandler(err);
       authorData.authorsInDB = authors;
       authorData.id          = authors[0]._id;
-      authors[0].username.should.equal('johndoe');
-      authors[0].fullname.should.equal('John Doe');
+      authorData.username    = authors[0].username;
+      authorData.fullname    = authors[0].fullname;
+
+      var authorUsernames = [ authors[0].username
+                            , authors[1].username];
+      authorUsernames.should.include('johndoe');
+
+      var authorFullnames = [ authors[0].fullname
+                            , authors[1].fullname];
+      authorFullnames.should.include('John Doe');
       done();
     };
   };
@@ -62,18 +71,36 @@ function databaseTests () {
     db.model('BlogAuthor').getAuthorById(authorData.id, gotAuthor);
 
     function gotAuthor (err, author) {
-      authorData.authorsInDB[0].username.should.equal('johndoe');
-      authorData.authorsInDB[0].fullname.should.equal('John Doe');
+      author.username.should.equal(authorData.username);
+      author.fullname.should.equal(authorData.fullname);
       done();
     };
   };
 
   function dataOfAnAuthorByUsername (done) {
-    db.model('BlogAuthor').getAuthorByUsername('johndoe', gotAuthor);
+    db.model('BlogAuthor').getAuthorByUsername(authorData.username, gotAuthor);
 
     function gotAuthor (err, author) {
-      authorData.authorsInDB[0]._id.should.equal(authorData.id);
-      authorData.authorsInDB[0].fullname.should.equal('John Doe');
+      author._id.toString().should.equal(authorData.id.toString());
+      author.fullname.should.equal(authorData.fullname);
+      done();
+    };
+  };
+
+  function listOfLatestPostsByAuthorUsername (done) {
+    db.model('BlogPost').getLatestPostsByAuthorUsername('johndoe', gotFirstList);
+
+    function gotFirstList (err, list) {
+      for (var i = 0; i < list.length; i++) {
+        list[i].author.username.should.equal('johndoe');
+      }
+      db.model('BlogPost').getLatestPostsByAuthorUsername('kernelpanic', gotSecondList);
+    };
+
+    function gotSecondList (err, list) {
+      for (var i = 0; i < list.length; i++) {
+        list[i].author.username.should.equal('kernelpanic');
+      }
       done();
     };
   };

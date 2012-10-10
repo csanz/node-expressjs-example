@@ -26,5 +26,23 @@ var BlogPost = module.exports = new Schema({
  * @api public
  */
 BlogPost.statics.getLatestPosts = function (callback) {
-  return this.find().sort('_id','descending').limit(15).find({}, callback);
+  return this
+          .find({ 'is_active' : true })
+          .sort('_id','descending')
+          .limit(15).exec(callback);
+};
+
+/**
+ * Get Latest Posts By Author's Username
+ *
+ * @param {String}   username
+ * @param {Callback} callback
+ *
+ * @api public
+ */
+BlogPost.statics.getLatestPostsByAuthorUsername = function (username, callback) {
+  return this
+          .find({ 'is_active' : true, 'author.username' : username })
+          .sort('_id','descending')
+          .limit(15).exec(callback);
 };

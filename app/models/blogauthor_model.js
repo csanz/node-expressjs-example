@@ -23,19 +23,19 @@ var BlogAuthor = module.exports = new Schema({
  * @api public
  */
 BlogAuthor.statics.getAuthorById = function (id, callback) {
-  return this.find({ '_id' : id }, callback);
+  return this.findOne({ '_id' : id }, callback);
 };
 
 /**
  * Get Author Data By username
  *
- * @param {ObjectId} username
+ * @param {String}   username
  * @param {Callback} callback
  *
  * @api public
  */
 BlogAuthor.statics.getAuthorByUsername = function (username, callback) {
-  return this.find({ 'username' :username }, callback);
+  return this.findOne({ 'username' :username }, callback);
 };
 
 /**

@@ -25,10 +25,10 @@
 # Before Pushing
 
   * Completar
-    * List author
-    * List cat
-    * List tag
-    * 3 model tests (aut, cat, tag)
+    * List author (falta ruta y rendering de la lista)
+    * List cat (modelo, ruta y rendering)
+    * List tag (modelo, ruta y rendering)
+    * 3 model tests (cat, tag)
     * 4 tests via routes
     * admin + new post (basic version)
     * Configuración adecuada del development mode y stub para production
