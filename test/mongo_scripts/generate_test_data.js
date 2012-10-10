@@ -23,14 +23,15 @@ var random_text       = [ 'Lorem ipsum dolor sit amet'
                         , 'Etiam quis pretium urna']
 
 // 1. Insert Author Data
-db.authors.save(
+db.blogauthors.ensureIndex( {username : 1}, {unique : true} );
+db.blogauthors.save(
   { 'username'   : 'johndoe'
   , 'fullname'   : 'John Doe'
   }
 );
 
 // 2. Get its ID
-var author = db.authors.findOne({username : 'johndoe'});
+var author = db.blogauthors.findOne({username : 'johndoe'});
 
 // 3. Insert Posts
 for (var i = 0; i < 10; i++) {

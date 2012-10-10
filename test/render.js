@@ -21,14 +21,14 @@ var app                 = require('../config/app')()
   , port                = app.get('port');
 app.listen(port);
 
-describe('Render', RenderTests);
+describe('Render', renderTests);
 
-function RenderTests () {
+function renderTests () {
   before(testData.generateTestData);
 
-  it('Should Retrieve a List of Latest Posts', ListOfLatestPostTest);
+  it('Should retrieve a list of latest posts', listOfLatestPostTest);
 
-  function ListOfLatestPostTest (done) {
+  function listOfLatestPostTest (done) {
     var request = superagent.agent();
 
     request.get('http://localhost:3000/').end(onResponse);

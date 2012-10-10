@@ -25,6 +25,6 @@ var BlogPost = module.exports = new Schema({
  *
  * @api public
  */
-BlogPost.statics.getLatestPosts = function(callback){
+BlogPost.statics.getLatestPosts = function (callback) {
   return this.find().sort('_id','descending').limit(15).find({}, callback);
 };
