@@ -25,20 +25,40 @@ var random_text       = [ 'Lorem ipsum dolor sit amet'
 // 1. Insert Author Data
 db.blogauthors.ensureIndex( {username : 1}, {unique : true} );
 db.blogauthors.save(
+  { 'username'   : 'kernelpanic'
+  , 'fullname'   : 'Frank Doe'
+  , 'is_active'  : true
+  }
+);
+db.blogauthors.save(
   { 'username'   : 'johndoe'
   , 'fullname'   : 'John Doe'
+  , 'is_active'  : true
   }
 );
 
 // 2. Get its ID
-var author = db.blogauthors.findOne({username : 'johndoe'});
+var authors = [];
+authors.push(db.blogauthors.findOne({username : 'kernelpanic'}));
+authors.push(db.blogauthors.findOne({username : 'johndoe'}));
 
 // 3. Insert Posts
-for (var i = 0; i < 10; i++) {
+  db.blogposts.save(
+    { 'title'         : titles[0] + ' Post'
+    , 'body'          : GetRandomText()
+    , 'author'        : authors[0]
+    , 'tags'          : GetThreeRandomArray(random_tags)
+    , 'categories'    : GetThreeRandomArray(random_categories)
+    , 'is_active'     : true
+    , 'date_created'  : Date.now()
+    }
+  );
+
+for (var i = 1; i < 10; i++) {
   db.blogposts.save(
     { 'title'         : titles[i] + ' Post'
     , 'body'          : GetRandomText()
-    , 'author'        : author
+    , 'author'        : authors[1]
     , 'tags'          : GetThreeRandomArray(random_tags)
     , 'categories'    : GetThreeRandomArray(random_categories)
     , 'is_active'     : true
