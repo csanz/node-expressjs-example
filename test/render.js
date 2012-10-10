@@ -12,7 +12,8 @@
 // Module Dependencies
 var cheerio             = require('cheerio')
   , should              = require('should')
-  , superagent          = require('superagent');
+  , superagent          = require('superagent')
+  , testData            = require('./utils/test_data_gen_rem');
 
 // Dependencies to test components
 process.env.NODE_ENV    = 'test';
@@ -23,7 +24,7 @@ app.listen(port);
 describe('Render', RenderTests);
 
 function RenderTests () {
-  before(generateTestData);
+  before(testData.generateTestData);
 
   it('Should Retrieve a List of Latest Posts', ListOfLatestPostTest);
 
@@ -44,36 +45,5 @@ function RenderTests () {
     };
   };
 
-  after(removeTestData);
-};
-
-/**
- * Auxiliar Test Functions
- */
-
-function generateTestData (done) {
-  var exec = require("child_process").exec;
-  var cmd  = 'mongo test/mongo_scripts/generate_test_data.js';
-  exec(cmd, function (error, stdout, stderr) {
-    if (error || stderr) {
-      console.log(error || stderr);
-      throw 'Error on Data Generation for Test!'
-    } else {
-      done();
-    }
-  });
-};
-
-function removeTestData (done) {
-  this.timeout(3000)
-  var exec = require("child_process").exec;
-  var cmd  = 'mongo test/mongo_scripts/remove_test_data.js';
-  exec(cmd, function (error, stdout, stderr) {
-    if (error || stderr) {
-      console.log(error || stderr);
-      throw 'Error on Data Removal for Test!'
-    } else {
-      done();
-    }
-  });
+  after(testData.removeTestData);
 };

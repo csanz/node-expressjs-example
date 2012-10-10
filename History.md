@@ -24,8 +24,6 @@
 
 # Before Pushing
 
----> Crea datos, visualizalos en la home, haz el test!!
-
   * Completar
     * Modelo Autor
     * List author
