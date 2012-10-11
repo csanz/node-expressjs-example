@@ -1,3 +1,4 @@
+
 module.exports = function(app){
   function NotFound(msg){
     this.name = 'NotFound';
@@ -10,28 +11,10 @@ module.exports = function(app){
   //  Catch all
   
   app.all('*', function notFound(req, res, next) {
-     throw new NotFound;
-  });
-  
-  //  Load 404 page
-  
-  app.error(function(err, req, res, next){
-      if (err instanceof NotFound) {
-          res.render('home/404');
-      } else {
-          next(err);
-      }
-  });
-
-  //  Load 500 page
-  
-  app.error(function(err, req, res){
-    console.log(err);
-    res.render('home/500', {
-      error: err
-    });
+    // TODO: Remove this, is just temporally
+    //       until I figure out what to do with this
+    res.send(500, { error: 'Sorry something bad happened!' });
   });
   
   return app;
-  
 }

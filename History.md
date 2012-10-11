@@ -1,28 +1,91 @@
-TO-DO
-  * Add friggin validation
+# TO-DO
+
+ * Add friggin validation
+ * Adaptar Effector theme acá
+ * Plugin: Enganchate a un RSS y obtén los posts
+ * Plugin del tag cloud
+ * Plugin de los tweets
+ * Post Editor ala Tumblr
+ * Add Themes, Plugin and Widget Support
+ * Define the way of having variable themes & templates
+   (ala wordpress).
+
+# Must have features
+
+ * Socket.io (instead of Pusher)
+ * Errors 404 & 500 as next () middleware elements
+ * Prev & Next Post
+ * Transitions List - Post - List
+ * Binding of Back & Forward Button
+ * Hooks on New, Modified Post
+ * Comments + Hooks
+ * Autentication for admin, editors (twitter oauth)
+ * Add DISQUS Support on comments
+ * Admin Panel
+ * RSS Support
+
+ * Tengo que pensar en una buena estructura para las vistas
+   Orientada al blog, pensando en listados, posts y paginas (pages)
+
+# Before Pushing
+
+  * Completar
+    * List author (TEST)
+    * List cat (modelo, ruta y rendering + TEST)
+    * List tag (modelo, ruta y rendering + TEST)
+    * 3 model tests (cat, tag)
+    * 3 tests via routes
+    * res.send(404) + next() -> Para los 500...
+    * admin + new post (basic version)
+    * Configuración adecuada del development mode y stub para production
+    * Use redis for admin sessions
+
+  * Subir lo que llevo a neosource.cl
+
+# Versions
+
+0.2.0
+
+ * Heavy refactoring
+ * Upgraded NodeJS to 0.8.x 
+ * Upgraded ExpressJS to 3.0.0rc4
+ * Upgraded jQuery requeriment to 1.8.2
+ * Upgraded Bootstrap to 2.1.1
+ * Added environment switch and files based on NODE_ENV variable
+   default is `development`
+ * Augmented BlogPost Model to support Tag, Categories and Authors
+    * Added Author Model
+ * Added Test Support, with sample data for list retrieval
+ * Removed pusher (will be replaced by socket.io)
+ * Added routes for post queries on tag, categories and authors
+
+ (should be there)
+ * Admin Panel + New `Edit Post` UI
+ * User sessions with RedisDB
+ * Twitter OAuth
 
 0.1.8
 
- * Added Bootrap support
- * Cleaned up the code 
+  * Added Bootrap support
+  * Cleaned up the code 
 
 0.1.7
 
- * Added express-expose support
- * Added Pusher Support
- * Added Hooks 
+  * Added express-expose support
+  * Added Pusher Support
+  * Added Hooks 
 
 0.1.6
  
- * Upgraded Jade, Stylus and Mongoose
- * Added constructor to controller and included db var at the top
- * Cleaned up routes and removed the long function callback
+  * Upgraded Jade, Stylus and Mongoose
+  * Added constructor to controller and included db var at the top
+  * Cleaned up routes and removed the long function callback
 
 0.1.5
 
- * Added slick color stuff to the terminal (http://cl.ly/0X1e1s3P3R3k2c090i3I)
- * Added repl debugging samples (See Readme)
- * Added new environments file (to support multiple environments duh)
+  * Added slick color stuff to the terminal (http://cl.ly/0X1e1s3P3R3k2c090i3I)
+  * Added repl debugging samples (See Readme)
+  * Added new environments file (to support multiple environments duh)
 
 0.1.4
   
@@ -47,5 +110,5 @@ TO-DO
   * Changed structure to use MVC structure
 
 0.1.0 / 2011-05-10
-
+  
   * Added application. 
