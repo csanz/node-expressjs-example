@@ -30,6 +30,8 @@ function databaseTests () {
   it('Should get the data of an author by their id', dataOfAnAuthorByID);
   it('Should get the data of an author by their username', dataOfAnAuthorByUsername);
   it('Should get the latest posts by author username', listOfLatestPostsByAuthorUsername);
+  it('Should get the latest posts by category `eight`', listOfLatestPostsByCategory);
+  it('Should get the latest posts by tag `Phi`', listOfLatestPostsByTag);
 
   function listOfLatestPost (done) {
     db.model('BlogPost').getLatestPosts(gotPosts);
@@ -91,6 +93,7 @@ function databaseTests () {
     db.model('BlogPost').getLatestPostsByAuthorUsername('johndoe', gotFirstList);
 
     function gotFirstList (err, list) {
+      list.length.should.be.above(0);
       for (var i = 0; i < list.length; i++) {
         list[i].author.username.should.equal('johndoe');
       }
@@ -98,8 +101,32 @@ function databaseTests () {
     };
 
     function gotSecondList (err, list) {
+      list.length.should.be.above(0);
       for (var i = 0; i < list.length; i++) {
         list[i].author.username.should.equal('kernelpanic');
+      }
+      done();
+    };
+  };
+
+  function listOfLatestPostsByCategory (done) {
+    db.model('BlogPost').getLatestPostsByCategory('eight', gotList);
+
+    function gotList (err, list) {
+      list.length.should.be.above(0);
+      for (var i = 0; i < list.length; i++) {
+        list[i].categories.toString().should.include('eight');
+      }
+      done();
+    };
+  };
+
+  function listOfLatestPostsByTag (done) {
+    db.model('BlogPost').getLatestPostsByTag('Phi', gotList);
+
+    function gotList (err, list) {
+      for (var i = 0; i < list.length; i++) {
+        list[i].tags.toString().should.include('Phi');
       }
       done();
     };

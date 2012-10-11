@@ -13,7 +13,7 @@ block body
         .form-actions
           input.btn(type = 'submit', value = 'Save!')
     .span4
-      h2 Posts
+      h2 #{vars.category}
       - if (vars.posts && vars.posts.length)
           #posts
             each post in vars.posts

@@ -1,11 +1,14 @@
 # TO-DO
 
  * Add friggin validation
+ * Adaptar Effector theme acá
+ * Plugin: Enganchate a un RSS y obtén los posts
+ * Plugin del tag cloud
+ * Plugin de los tweets
  * Post Editor ala Tumblr
  * Add Themes, Plugin and Widget Support
  * Define the way of having variable themes & templates
    (ala wordpress).
-
 
 # Must have features
 
@@ -14,7 +17,6 @@
  * Prev & Next Post
  * Transitions List - Post - List
  * Binding of Back & Forward Button
- * Responsive Design (different Resolutions)
  * Hooks on New, Modified Post
  * Comments + Hooks
  * Autentication for admin, editors (twitter oauth)
@@ -22,19 +24,23 @@
  * Admin Panel
  * RSS Support
 
+ * Tengo que pensar en una buena estructura para las vistas
+   Orientada al blog, pensando en listados, posts y paginas (pages)
+
 # Before Pushing
 
   * Completar
-    * List author (falta ruta y rendering de la lista)
-    * List cat (modelo, ruta y rendering)
-    * List tag (modelo, ruta y rendering)
+    * List author (TEST)
+    * List cat (modelo, ruta y rendering + TEST)
+    * List tag (modelo, ruta y rendering + TEST)
     * 3 model tests (cat, tag)
-    * 4 tests via routes
+    * 3 tests via routes
+    * res.send(404) + next() -> Para los 500...
     * admin + new post (basic version)
     * Configuración adecuada del development mode y stub para production
     * Use redis for admin sessions
 
-  * Subir lo que llevo a nodejs.cl
+  * Subir lo que llevo a neosource.cl
 
 # Versions
 
@@ -52,6 +58,11 @@
  * Added Test Support, with sample data for list retrieval
  * Removed pusher (will be replaced by socket.io)
  * Added routes for post queries on tag, categories and authors
+
+ (should be there)
+ * Admin Panel + New `Edit Post` UI
+ * User sessions with RedisDB
+ * Twitter OAuth
 
 0.1.8
 

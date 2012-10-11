@@ -46,3 +46,33 @@ BlogPost.statics.getLatestPostsByAuthorUsername = function (username, callback) 
           .sort('_id','descending')
           .limit(15).exec(callback);
 };
+
+/**
+ * Get Latest Posts By Author's Username
+ *
+ * @param {String}   username
+ * @param {Callback} callback
+ *
+ * @api public
+ */
+BlogPost.statics.getLatestPostsByCategory = function (category, callback) {
+    return this
+          .find({ 'is_active' : true, 'categories' : category })
+          .sort('_id','descending')
+          .limit(15).exec(callback);
+};
+
+/**
+ * Get Latest Posts By Author's Username
+ *
+ * @param {String}   username
+ * @param {Callback} callback
+ *
+ * @api public
+ */
+BlogPost.statics.getLatestPostsByTag = function (tag, callback) {
+  return this
+          .find({ 'is_active' : true, 'tags' : tag })
+          .sort('_id','descending')
+          .limit(15).exec(callback);
+};
