@@ -10,3 +10,6 @@ plumajs is a super light, super simple and developer-friendly blog app built on 
 * [@hermanjunge](http://github.com/hermanjunge)
 * [@carloselias](http://github.com/carloselias)
 
+# Contact
+
+* https://twitter.com/plumajs
