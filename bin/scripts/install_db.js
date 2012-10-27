@@ -32,7 +32,7 @@ var host = 'http://localhost'
 var port = 3000
 
 // Setup default theme
-var theme       = 'effector_jade'
+var theme       = 'bootstrap_basic'
 
 // Create admin document
 db.admin.insert({ 'doc_name'            : 'admin_keys'

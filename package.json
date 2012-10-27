@@ -1,23 +1,19 @@
-{   "name"        : "pluma-js"
-  , "version"     : "0.2.0"
-  , "homepage"    : "https://github.com/csanz/plumajs/"
-  , "description" : "plumajs is a super light, super simple and developer-friendly blog app built on Node.js"
-  , "repository"  : "git://github.com/csanz/plumajs.git"
-  , "author"      : "Christian Sanz <chrissanz@gmail.com>"
-  , "dependencies": {
-      "cheerio"           : "0.10.1"
-    , "express"           : "3.0.0rc4"
-    , "jade"              : "0.25.x"
-    , "juan-rss"          : "0.1.x"
-    , "mongoose"          : "2.5.10"
-    , "nib"               : "0.3.x"
-    , "should"            : "1.2.0"
-    , "stylus"            : "0.22.x"
-    , "superagent"        : "0.9.5"
+{   "name"          : "pluma-js"
+  , "version"       : "0.2.0"
+  , "homepage"      : "https://github.com/csanz/plumajs/"
+  , "description"   : "plumajs is a super light, super simple and developer-friendly blog app built on Node.js"
+  , "repository"    : "git://github.com/csanz/plumajs.git"
+  , "author"        : "Christian Sanz <chrissanz@gmail.com>"
+  , "dependencies"  : {
+      "express"     : "3.0.0rc4"
+    , "jade"        : "0.25.x"
+    , "mongoose"    : "2.5.10"
+    , "nib"         : "0.3.x"
+    , "stylus"      : "0.22.x"
     }
-  , "main"    : "./index.js"
-  , "engines" : { 
-      "node": "0.8.x"
-    , "npm" : "1.0.x"
+  , "main"          : "./index.js"
+  , "engines"       : { 
+      "node"        : "0.8.x"
+    , "npm"         : "1.0.x"
     }
 }
