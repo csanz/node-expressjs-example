@@ -1,0 +1,47 @@
+@import 'nib'
+
+light = #a9a9a9
+lighter = #eee
+blue = #00ABFA
+dark = #222
+
+@import 'import/_mixins'
+
+@import 'import/_globals'
+
+// blog post
+
+.delete,
+.edit
+  color #666
+  cursor pointer
+  float right
+  margin-left 5px
+  text-decoration none
+
+.edit-mode
+  .hide
+    display block !important
+  .show
+    display none !important
+  
+//everythign else
+
+ul#flash
+  fixed top 10px left 15px
+  z-index 200
+  margin 0
+  padding 0
+  li
+    list-style: none
+    margin 8px 0
+    padding 8px 15px
+    border 1px solid light
+    border-radius 5px
+    font-size 12px
+    background white
+    box-shadow 0 0 4px lighter 
+
+h2
+  text-shadow 1px 1px 0 white
+  color #58575A

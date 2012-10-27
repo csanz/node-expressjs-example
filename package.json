@@ -9,7 +9,7 @@
     , "jade"        : "0.25.x"
     , "mongoose"    : "2.5.10"
     , "nib"         : "0.3.x"
-    , "stylus"      : "0.22.x"
+    , "stylus"      : "0.30.x"
     }
   , "main"          : "./index.js"
   , "engines"       : { 

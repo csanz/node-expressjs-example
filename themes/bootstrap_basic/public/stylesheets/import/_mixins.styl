@@ -1,0 +1,32 @@
+// mixins
+
+field_style()
+  margin: 5px 0
+  padding: 8px 10px
+  outline: none
+  border-radius: 5px
+  border: 1px solid light
+  color: light
+  &:focus
+    box-shadow: 0 1px 1px 0 rgba(blue, 0.6), 0 0 3px 1px rgba(blue, 0.3)
+
+button()
+  bold-button(glow: blue)
+
+smooth()
+  -webkit-font-smoothing: antialiased
+
+borderfy()
+  border: 1px solid lighter
+
+roundedges(bg_color, border_color)
+  if bg_color
+    background-color  bg_color
+  if border_color
+    border  1px solid border_color
+  -webkit-border-radius  5px 
+  -moz-border-radius  5px 
+  border-radius  5px
+
+shade()
+  box-shadow: 0 1px 1px 0 rgba(light, 0.6), 0 0 3px 1px rgba(light, 0.1)

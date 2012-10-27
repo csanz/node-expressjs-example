@@ -20,11 +20,11 @@ module.exports = function (_app) {
  *
  * @api     public
  *
- * @url     GET     /
+ * @url     GET     /blog
  */
 controller.latest = function (req, res, next) {
   var s = {}
-  s.template = 'blog'
+  s.template = 'blog/index'
   BlogPost.getLatestPosts(gotPosts)
 
   function gotPosts (err, posts) {
@@ -34,8 +34,6 @@ controller.latest = function (req, res, next) {
   }
 
   function render () {
-    res.render( s.template
-              , { vars : s }
-    )
+    res.render( s.template, s )
   }
 }

@@ -1,2 +1,11 @@
-.DS_Store
+
 /node_modules
+
+# Stylus main.css
+/themes/bootstrap_basic/public/stylesheets/main.css
+
+# OS X Users, anyone?
+.DS_Store
+
+# Developer goodies
+/herman

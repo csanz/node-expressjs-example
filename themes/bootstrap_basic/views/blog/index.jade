@@ -1,0 +1,12 @@
+
+extends ../layout/index
+block container
+  .row
+    .span9
+      h2 Latest Posts
+      - if (posts && posts.length)
+          #posts
+            each post in posts
+              include _post
+      - else
+        .alert.alert-error no posts

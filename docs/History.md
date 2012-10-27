@@ -62,6 +62,7 @@ DONE
   * Upgraded Bootstrap to 2.1.1
   * Upgraded NodeJS to 0.8.x
   * Upgraded ExpressJS to 3.0.0rc4
+  * Upgraded Stylus to 0.30.x (so we got rid of these "path.exists is now called `fs.exists`".)
   * Added environment switch and files based on NODE_ENV variable default is `development`
   * Augmented BlogPost Model to support Tag, Categories and Authors
   * install.js file -> Must leave settings.js written
