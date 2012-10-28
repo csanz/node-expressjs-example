@@ -1,0 +1,388 @@
+/**
+ *  Perkins LESS Framework Version 2.0
+ *  ==================================
+ *
+ *  Form mixins, helpers and elements
+ *
+ *  Designed by                   Carlos Elías
+ *                                Rodrigo Fuentealba
+ *
+ */
+
+// Checkbox as Switches
+
+.p-switchbox(@startColor: #1367D6, @endColor: #23A6ED, @btnStartColor: #cecece, @btnEndColor: #efefef, @textON:"ON", @textOFF:"OFF") {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: block;
+  width: 94px;
+  position: relative;
+  label {
+    padding: 0;
+  }
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox] + label {
+    display: block;
+    cursor: pointer;
+    width: 94px;
+    overflow: hidden;
+    background: #fff;
+    .border-radius(3px);
+    #gradient > .vertical(@startColor, @endColor);
+    .transition(0.3s ease-in-out);
+    &:active {
+      left: 5px;
+    }
+    span, span:before, span:after {
+      text-align: center;
+      display: block;
+      width: 54px;
+      height: 24px;
+      line-height: 25px;
+      position: absolute;
+      top: -1px;
+      font-weight: bold;
+      text-indent: 0;
+      .box-shadow(inset 1px 2px 2px 0 rgba(0,0,0,0.20));
+    }
+    span {
+      text-indent: -9999px;
+      top: 0;
+      position: relative;
+      left: 0;
+      width: 37px;
+      .border-radius(0);
+      #gradient > .vertical(@btnStartColor, @btnEndColor);
+      .transition(left 0.3s ease-in-out);
+      border: solid 1px;
+      border-color: #919191 #9f9f9f #999999 #919191;
+      .box-shadow(0 1px 0 rgba(255,255,255,0.40), 0 1px 0 rgba(255,255,255,0.40) inset);
+      &:before {
+        color: #eee;
+        text-shadow: 0 1px rgba(255,255,255,0.1), 0 -1px rgba(0,0,0,.3);
+        content: @textON;
+        #gradient > .vertical(@startColor, @endColor);
+        border-top: solid 1px rgba(255,255,255,0.40);
+        border-bottom: solid 1px rgba(255,255,255,0.20);
+        border-radius: 1px 0 0 1px;
+        left: -55px;
+      }
+      &:after {
+        color: #888;
+        content: @textOFF;
+        left: auto;
+        right: -55px;
+        #gradient > .vertical(#ddd, #eee);
+        border-top: solid 1px #7d7d7d;
+        border-bottom: solid 1px #c0c0c0;
+      }
+    }
+  }
+  input[type=checkbox]:checked + label:active span {
+    left:50px;
+  }
+  input[type=checkbox]:checked + label span {
+    left:55px;
+  }
+  input[type=checkbox]:checked + label {
+    background-position: 20px;
+  }
+  &:before, &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 93px;
+    width: 1px;
+    height: 24px;
+    border: solid #fff;
+    border-width: 1px 0;
+    z-index: 20;
+    background: #999;
+  }
+  &:before {
+    left: 0;
+  }
+}
+
+
+/* -----------------------------------------------------------------------
+
+ RMSforms CSS Forms Framework 0.5 ***modded***
+ http://rmsjr.com
+
+   * Copyright (c) 2009-Present.
+
+----------------------------------------------------------------------- */
+
+/*
+All of the modifier classes should be applied to form uls and are used to present the structure: <li><label></label><input/></li>.
+Each letter represented in the class name represents the orientation of the li - label - input elements respectively.
+
+h = horizontal block element (floated left)
+v = vertical block element 
+i = inline element
+
+for example, the class:.hvv  =  [LI:Horizontal Block Element]  [LABEL:Verticle block element]  [INPOUT:Vertical block element]
+*/
+
+.form {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  ul {
+    padding: 2px 5px 5px 5px;
+    overflow: hidden;
+    height: 1%;
+    list-style: none;
+  }
+  li {
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+    .box-sizing();
+    ul li {
+      border-bottom: 0px solid #ff0000;
+    }
+  }
+  label {
+    width: 20%;
+    float: left;
+    display: inline;
+    font-weight: bold;
+    padding: 4px 1% 3px;
+  }
+  input, select, textarea {
+    float: left;
+    display: inline;
+  }
+  input[type='radio'] {
+    border: none;
+    margin-top: 8px;
+  }
+  input[type='checkbox'] {
+    border: none;
+    margin-top: 8px;
+  }
+  
+  // Defaults and Multiple Forms
+  .leftNote {
+    padding: 3px 5px 0 5px;
+    float: left;
+  }
+  .bottomNote {
+    padding: 0;
+    clear: both;
+    display: block;
+    margin-left: 22%;
+  }
+  &.tar label {
+    text-align: right;
+  }
+  .vii {
+    float:left
+    li {
+      float: none;
+      clear: none;
+    }
+    label { 
+      float: none;
+      width: auto;
+      vertical-align: middle;
+    }
+    input, select {
+      float: none;
+      vertical-align: middle;
+      margin-left: 0px;
+      margin-right: 5px;
+    }
+  }
+  .vhh {
+    float: left;
+    display: inline;
+    li {
+      display: block;
+      clear: both;
+      float: left;
+      width: auto;
+      margin-bottom: 3px;
+    }
+    label {
+      float: left;
+      width: 100px;
+      display: inline;
+    }
+    input, select, textarea {
+      float: left;
+      display: inline;
+    }
+  }
+} /* End .form */
+
+.vvv {
+  li {
+    display: block;
+    clear: both;
+    width: 100%;
+  }
+  label {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+  input, select, textarea {
+    display: block;
+    float: left;
+    margin: 5px 0;
+    width: 61%;
+  }
+  input[type='radio'] {
+    width: auto;
+  }
+  input[type='checkbox'] {
+    width: auto;
+  }
+  .hii label {
+    display: inline;
+    float: none;
+  }
+  .hii input {
+    float: none;
+    display: inline;
+  }
+  .bottomNote {
+    margin: 0;
+  }
+}
+.hvv, .hii {
+  overflow: hidden;
+  height: 1%;
+  li {
+    float: left;
+    margin-right: 10px;
+    display: inline;
+    width: auto;
+    clear: none;
+  }
+  label {
+    display: block;
+    width: auto;
+    float: none;
+    padding: 7px 0;
+  }
+  input, select, textarea {
+    display: block;
+    margin: 5px 0 5px 1px;
+    width: inherit !important;
+  }
+  .bottomNote {
+    margin: 0;
+  }
+}
+
+.hhh {
+  overflow: hidden;
+  height: 1%;
+  li {
+    float: left;
+    margin-right: 10px;
+    display: inline;
+    width: auto;
+    border-bottom: 0;
+    li {
+      clear: both; /* reset second level list */
+    }
+    .bottomNote {
+      margin: 0;
+      text-align: right;
+    }
+  }
+  label {
+    float: left;
+    width: 100px;
+    padding: 7px 0;
+  }
+  input, select, textarea {
+    float: left;
+  }
+  &.tar label {
+    padding-right: 10px;
+    width: 90px;
+  }
+}
+// Multiple Forms
+.vii {
+  float: left;
+  width: auto;
+  li {
+    display: block;
+    float: left;
+    width: auto;
+    clear: both;
+  }
+  label {
+    display: inline;
+    width: auto;
+    vertical-align: middle;
+    float: none;
+  }
+  input, select, textarea {
+    display: inline;
+    vertical-align: middle;
+    float: none;
+  }
+}
+.h-multiForm {
+  list-style: none;
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+}
+.multiSelect {
+  height: 200px;
+  width: 200px;
+  float: left;
+  padding: 0px;
+  overflow: hidden;
+  overflow: auto;
+  .form {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .vhh {
+    margin: 0;
+    padding: 0;
+    li {
+      overflow: hidden;
+      width: 100%;
+    }
+    input {
+      float: left;
+    }
+    label {
+      float: none;
+      margin-left: 20px;
+      display: block;
+      width: auto;
+      clear: none;
+    }
+  }
+  .vii {
+    li {
+      width: 100%;
+    }
+  }
+}

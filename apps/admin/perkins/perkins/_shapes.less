@@ -1,0 +1,42 @@
+// Practical Joke: Implementing CIRCLES @hagarelvikingo
+.circle(@radius: 100px) {
+  width: @radius * 2;
+  height: @radius * 2;
+  .border-radius(@radius);
+}
+
+// Triangles
+.triangle-topright(@size: 20px, @color: @system) {
+  width: 0;
+  height: 0;
+  border-top: @size solid @color;
+  border-left: @size solid transparent;
+}
+.triangle-left(@size: 20px, @color: @system) {
+  width: 0;
+  height: 0;
+  border-top: @size/2 solid transparent;
+  border-right: @size solid @color;
+  border-bottom: @size/2 solid transparent;
+}
+.triangle-down(@size: 20px, @color: @system) {
+  width: 0;
+  height: 0;
+  border-left: @size solid transparent;
+  border-right: @size solid transparent;
+  border-top: @size solid @color;
+}
+.triangle-up(@size: 20px, @color: @system) {
+  width: 0;
+  height: 0;
+  border-left: @size solid transparent;
+  border-right: @size solid transparent;
+  border-bottom: @size solid @color;
+}
+.triangle-right(@size: 20px, @color: @system) {
+  width: 0;
+  height: 0;
+  border-top: @size solid transparent;
+  border-bottom: @size solid transparent;
+  border-left: @size solid @color;
+}

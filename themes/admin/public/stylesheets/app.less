@@ -1,0 +1,123 @@
+@import "/app/lib/perkins/_perkins";
+@import "/app/lib/perkins/perkins/_grid";
+@import "/app/lib/perkins/perkins/_table";
+@import "/app/lib/perkins/perkins/_form";
+@import "/app/lib/perkins/perkins/_feedback";
+@import "/app/lib/perkins/perkins/_shapes";
+
+@import "/app/lib/perkins/_gray";
+@import "/app/lib/perkins/_bb2";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700";
+
+@p-sans: "Open Sans";
+@p-headings: "Open Sans Condensed";
+@p-white: #fff;
+@p-red: #d43f33;
+
+@skin-base: #3891BD;
+@skin-light: lighten(@skin-base, 20%); //#6AB9DA;
+@skin-dark: darken(@skin-base, 15%);
+@skin-darken: #303030;
+
+body {
+  background: #F2F2F2;
+}
+
+.ui-fill {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  .box-sizing();
+}
+nav#menu {
+  width: 10%;
+  background: #434343 url(/images/tnoise.png);
+  .ui-fill;
+  left: 0;
+  ul {
+    .v-menu;
+    li a {
+      color: @p-white;
+      width: 84%;
+      .font-size(36);
+      padding: 0 10px;
+      color: rgba(255,255,255,0.50);
+      margin: 50px 0;
+      &:hover {
+        color: rgba(255,255,255,1);
+      }
+    }
+  }
+  .logo {
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    .transition(all ease 0.2s);
+    opacity: 0.20;
+    &:hover {
+      .transition(all ease 0.2s);
+      opacity: 1;
+    }
+  }
+}
+aside#sidebar {
+  width: 20%;
+  background: #F7F7F7 url(/images/tnoise.png);
+  .ui-fill;
+  left: 10%;
+  border-right: 1px solid #DFDFDF;
+  header.side {
+    padding: 20px;
+    h4 {
+      font-weight: 300;
+    }
+    p {
+      .font-size(12);
+      line-height: 1.2;
+    }
+  }
+  ul {
+    .v-menu;
+    li:first-child a {
+      border-top: 1px solid #DFDFDF;
+    }
+    li a {
+      #gradient > .vertical(#FAFAFA, #EFEFEF);
+      padding: 15px;
+      text-transform: uppercase;
+      color: #555;
+      .font-size(12);
+      font-weight: 700;
+      border-bottom: 1px solid #d9dad9;
+      margin: 1px 0 0;
+      &:hover {
+        #gradient > .vertical(#EFEFEF, #FAFAFA);
+      }
+    }
+  }
+}
+div.content {
+  width: 65%;
+  background: @p-white;
+  margin-left: 30%;
+  position: relative;
+  padding: 20px;
+  border-right: 1px solid #DFDFDF;
+  header.dash {
+    #gradient > .vertical(#FAFAFA, #EFEFEF);
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    padding: 10px 5px 3px 20px;
+    h5 {
+      font-weight: 300;
+      float: left;
+      position: relative;
+      top: -3px;
+    }
+    ul {
+      .h-menu;
+      float: right;
+    }
+  }
+}

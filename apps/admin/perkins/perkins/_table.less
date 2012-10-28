@@ -1,0 +1,109 @@
+/**
+ *  Perkins LESS Framework Version 2.0
+ *  ==================================
+ *
+ *  Table elements and helpers
+ *
+ *  Designed by                   Carlos Elías
+ *                                Rodrigo Fuentealba
+ *
+ */
+ 
+// Table minimal design
+#p-common-table {
+  .th(@bgColor: @p-gray-lightest, @padding: 10px) {
+    background: @bgColor;
+    .text-shadow(0 1px 0 rgba(255,255,255,0.40));
+    color: @p-gray-darker;
+    padding: @padding;
+    border-right: 1px solid @p-gray-light;
+    border-bottom: 1px solid @p-gray-light;
+  }
+  .td() {
+    border-bottom: 1px solid @p-gray-light;
+    border-right: 1px solid @p-gray-light;
+    padding: 10px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0px auto;
+  font-size: 100%;
+  caption {
+    margin: 1px 0px;
+    padding: 3px 1px;
+    font-weight: bold;
+  }
+  th, td {
+    padding: 3px;
+  }
+  thead {
+    tr {
+      th {
+        background-color: inherit;
+        padding: 3px 10px;
+        text-align: center;
+      }
+      td {
+        background-color: inherit;
+        padding: 3px 10px;
+        text-align: center;
+      }
+    }
+  }
+  tbody {
+    a {
+      padding: 2px 2px;
+      text-decoration: none;
+    }
+    tr {
+      th {
+        padding: 3px 10px;
+        text-align: center;
+      }
+      td {
+        padding: 3px 10px;
+        text-align: left;
+      }
+    }
+  }
+  tfoot {
+    font-size: 90%;
+    tr {
+      th {
+        padding: 3px 10px;
+        text-align: center;
+      }
+
+      td {
+        padding: 3px 10px;
+        text-align: left;
+      }
+    }
+  }
+}
+.table {
+  thead {
+    th {
+      #p-common-table > .th();
+    }
+  }
+  tbody {
+    th {
+      #p-common-table > .th();
+    }
+    td {
+      #p-common-table > .td();
+    }
+  }
+  tfoot {
+    th {
+      #p-common-table > .th();
+    }
+    td {
+      #p-common-table > .td();
+      .tac;
+    }
+  }
+}

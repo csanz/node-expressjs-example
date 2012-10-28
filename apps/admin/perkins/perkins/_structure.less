@@ -1,0 +1,358 @@
+/**
+ *  Perkins LESS Framework Version 2.0
+ *  ==================================
+ *
+ *  Structural and typography basic config, helpers and mixins
+ *
+ *  Designed by                   Carlos Elías
+ *                                Rodrigo Fuentealba
+ *
+ */
+  html {
+    font-size:                    62.5%;
+    }
+  body {
+    width:                        @p-page-width;
+    font-weight:                  normal;
+    font-size:                    @p-basefont;
+    line-height:                  @p-baseline;
+    font-family:                  @p-sans;
+    color:                        @p-gray-darkest;
+    text-rendering:               optimizeLegibility; // Linux and Windows
+  }
+  header, nav, footer, aside, article, section {
+    display: block;
+  }
+  a {
+    border: none;
+    color: @p-font-colors-link;
+    img {
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+  a:visited {
+    cursor: pointer;
+    outline: none;
+  }
+  a:hover {
+    cursor: pointer;
+    outline: none;
+    color: darken(@p-font-colors-link, 20%);
+    .transition();
+  }
+  a:active {
+    cursor: pointer;
+    outline: none;
+  }
+  blockquote {
+    border-left: 0.3em @system solid;
+    line-height: 1.5;
+    margin: 1.5em 0.5 2em 1.5em;
+    padding: 0.5em 1em;
+    .box-sizing();
+  }
+  mark {
+    background-color: #FFFCE1;
+    padding: 0 5px;
+  }
+  p {
+    margin-bottom: 1em;
+    font-size: @p-basefont;
+    line-height: @p-baseline;
+  }
+  pre {
+    line-height: 1.2;
+    margin: 0;
+    padding: 1.5em;
+    font-weight: 300;
+    background: #333;
+    color: @p-green;
+    .border-radius();
+    .box-shadow(inset 0 1px 3em darken(@system, 80%));
+  }
+  hr {
+    background: @system;
+    color: @system;
+    border: none;
+    clear: both;
+    float: none;
+    height: 1px;
+    margin: 0 0 1.45em;
+    width: 100%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: @p-baseline;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.2em 0;
+    font-family: @p-headings;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 3.0rem;
+  }
+  h2 {
+    font-size: 2.8rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2.1rem;
+  }
+  h5 {
+    font-size: 1.8rem;
+  }
+  h6 {
+    font-size: 1.6rem;
+    font-weight: normal;
+  }
+  
+  li, label {
+    font-size: @p-basefont;
+    line-height: @p-baseline;
+  }
+  li ol li, li ul li{
+    font-size: @p-basefont;
+    line-height: @p-baseline;
+  }
+
+  a {
+    text-decoration: none;
+    text-transform: none;
+  }
+  
+  abbr {
+    border-bottom: 1px dotted @system;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  
+  acronym {
+    border-bottom: 1px dotted @system;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  
+  address {
+    font-style: italic;
+  }
+  
+  bdo {
+    font-weight: normal;
+    margin-bottom: 1.0em;
+  }
+  
+  blockquote {
+    font-family: @p-serif;
+    font-style: italic;
+  }
+  
+  cite {
+    font-family: @p-sans;
+    font-style: italic;
+  }
+  
+  code {
+    font-family: @p-mono;
+    font-weight: bold;
+  }
+  
+  del {
+    text-decoration: line-through;
+  }
+  
+  dl {
+    font-weight: bold;
+    dt {
+      font-weight: 500;
+    }
+    dd {
+      font-size: @p-basefont;
+      line-height: @p-baseline;
+    }
+  }
+  
+  em {
+    font-style: italic;
+    font-weight: normal;
+  }
+  
+  ins {
+    text-decoration: underline;
+  }
+  
+  kbd {
+    font-family: @p-mono;
+    font-style: italic
+  }
+  
+  mark {
+    font-family: @p-sans;
+  }
+  
+  meter {
+    font-weight: normal;
+  }
+  
+  p {
+    font-weight: normal;
+  }
+  
+  pre {
+    font-family: @p-mono;
+    font-weight: bold;
+  }
+  
+  q {
+    font-family: @p-serif;
+    font-weight: normal;
+  }
+  
+  samp {
+    font-family: @p-mono;
+    font-weight: normal;
+  }
+  
+  small {
+    font-size: 75%;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  var {
+    font-style: italic;
+  }
+
+  // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  *zoom:1;
+  
+  &:before,
+  &:after {
+      content:"";
+      display:table;
+  }
+  &:after {
+      clear:both;
+  }
+}
+  
+  // Clear
+  .clear, br {
+    zoom: 1;
+  }
+  .clear:after, br {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    content: ".";
+  }
+  .left {
+    float: left !important;
+  }
+  .right {
+    float: right !important;
+  }
+  .full {
+    width: 100%;
+  }
+  .tal {
+    text-align: left;
+  }
+  .tac {
+    text-align: center;
+  }
+  .tar {
+    text-align: right;
+  }
+  .taj {
+    text-align: justify;
+  }
+  ul {
+    list-style-position: inside;
+    list-style-type: disc;
+    margin: 0 1.5em 1.5em 0;
+    ul {
+      list-style-type: square;
+      ul {
+        list-style-type: circle;
+      }
+    }
+    li {
+      margin: 0 0 0.5em 0.85em;
+    }
+    li ul {
+      margin: 0 1.5em 0 0;
+    } 
+  }
+  ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+    margin: 1.0em 0.5em 0.5em 0.5em;
+    li {
+      margin: 0em 0.5em 0.5em 0.5em;
+    }
+    li ul {
+      margin: 0 1.5em 0 0;
+    }
+  }
+  dl {
+    margin: 0 0 1.5em 0;
+    dt {
+      margin: 0px 0px 0px 10px;
+      padding-bottom: 5px;
+    }
+    dd {
+      margin: 0px 0px 0px 20px;
+      padding-bottom: 5px;
+    }
+  }
+  fieldset {
+    border: 1px solid @system;
+    margin: 0 0 18px 0;
+    padding: 10px;
+    legend {
+      color: darken(@system, 40%);
+      padding: 0 10px;
+    }
+  }
+  input, select, textarea {
+    border: 1px solid @system;
+    display: block;
+    padding: 4px;
+  }
+  select {
+    padding: 3px;
+  }
+  input:focus, select:focus, textarea:focus {
+    .transition();
+    .box-shadow(0 0 5px @p-blue, 0 2px 5px rgba(32,32,32,0.20) inset);
+    border: 1px solid darken(@system, 40%);
+  }
+  input[type="checkbox"] {
+    margin: 3px 4px 0 2px;
+  }
+  input[type="radio"] {
+    margin: 3px 4px 0 0;
+  }
+  label {
+    font-weight: bold;
+    font-size: @p-basefont;
+    line-height: @p-baseline;
+    display: block;
+    cursor: pointer;
+    input {
+      display: inline-block;
+    }
+  }
+  input, textarea, select {
+    font-weight: normal;
+    font-size: @p-basefont;
+    line-height: @p-baseline;
+  }

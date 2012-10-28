@@ -1,0 +1,54 @@
+/**
+ *  Perkins LESS Framework Version 2.0
+ *  ==================================
+ *
+ *  Color palette generators
+ *
+ *  Designed by                   
+ *                                Rodrigo Fuentealba
+ *
+ */
+
+/**
+ *  Grayscale generation
+ */
+
+  @p-gray-lightest:               mix(@p-black, @p-white, 12.5%);
+  @p-gray-lighter:                mix(@p-black, @p-white, 25%);
+  @p-gray-light:                  mix(@p-black, @p-white, 37.5%);
+  @p-gray:                        mix(@p-black, @p-white, 50%);
+  @p-gray-dark:                   mix(@p-black, @p-white, 62.5%);
+  @p-gray-darker:                 mix(@p-black, @p-white, 75%);
+  @p-gray-darkest:                mix(@p-black, @p-white, 87.5%);
+  
+/**
+ *  Palette generator calculations
+ */
+ 
+  @p-preprocessor-lightness:      lighten(#FF0000, @p-palette-lightness);
+  @p-preprocessor-saturate:       desaturate(@p-preprocessor-lightness, @p-palette-desaturation);
+  @p-color-palette-base:          spin(@p-preprocessor-saturate, @p-palette-hue);
+
+/**
+ *  Color palette generation
+ */
+
+  @p-red:                         spin(darken(@p-color-palette-base,  0%), @p-palette-hue + 0);
+  @p-orange:                      spin(darken(@p-color-palette-base,  2%), @p-palette-hue + 30);
+  @p-yellow:                      spin(darken(@p-color-palette-base,  4%), @p-palette-hue + 60);
+  @p-lime:                        spin(darken(@p-color-palette-base,  6%), @p-palette-hue + 90);
+  @p-green:                       spin(darken(@p-color-palette-base,  8%), @p-palette-hue + 120);
+  @p-turquoise:                   spin(darken(@p-color-palette-base, 10%), @p-palette-hue + 150);
+  @p-cyan:                        spin(darken(@p-color-palette-base, 12%), @p-palette-hue + 180);
+  @p-ocean:                       spin(darken(@p-color-palette-base, 10%), @p-palette-hue + 210);
+  @p-blue:                        spin(darken(@p-color-palette-base,  8%), @p-palette-hue + 240);
+  @p-violet:                      spin(darken(@p-color-palette-base,  6%), @p-palette-hue + 270);
+  @p-magenta:                     spin(darken(@p-color-palette-base,  4%), @p-palette-hue + 300);
+  @p-raspberry:                   spin(darken(@p-color-palette-base,  2%), @p-palette-hue + 330);
+
+
+/**
+ *  Color default for styling 
+ */
+
+  @system:                        @p-gray;

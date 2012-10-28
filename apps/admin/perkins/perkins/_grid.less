@@ -1,0 +1,137 @@
+.grid(@rowwidth: 16) {
+  //width: @rowwidth * (@p-page-width / @p-grid-columns) - (2 * @p-grid-margin);
+  width: @rowwidth * (@p-page-width / @p-grid-columns);
+  .box-sizing();
+  display: inline;
+  float: left;
+  //margin: 0 @p-grid-margin;
+  overflow: hidden;
+}
+.grid-1 {
+  .grid(1);
+}
+.grid-2 {
+  .grid(2);
+}
+.grid-3 {
+  .grid(3);
+}
+.grid-4 {
+  .grid(4);
+}
+.grid-5 {
+  .grid(5);
+}
+.grid-6 {
+  .grid(6);
+}
+.grid-7 {
+  .grid(7);
+}
+.grid-8 {
+  .grid(8);
+}
+.grid-9 {
+  .grid(9);
+}
+.grid-10 {
+  .grid(10);
+}
+.grid-11 {
+  .grid(11);
+}
+.grid-12 {
+  .grid(12);
+}
+.grid-13 {
+  .grid(13);
+}
+.grid-14 {
+  .grid(14);
+}
+.grid-15 {
+  .grid(15);
+}
+.grid-16 {
+  .grid(16);
+}
+.grid-17 {
+  .grid(17);
+}
+.grid-18 {
+  .grid(18);
+}
+.grid-19 {
+  .grid(19);
+}
+.grid-20 {
+  .grid(20);
+}
+.grid-21 {
+  .grid(21);
+}
+.grid-22 {
+  .grid(22);
+}
+.grid-23 {
+  .grid(23);
+}
+.grid-24 {
+  .grid(24);
+}
+.grid-25 {
+  .grid(25);
+}
+.grid-26 {
+  .grid(26);
+}
+.grid-27 {
+  .grid(27);
+}
+.grid-28 {
+  .grid(28);
+}
+.grid-29 {
+  .grid(29);
+}
+.grid-30 {
+  .grid(30);
+}
+.grid-31 {
+  .grid(31);
+}
+.grid-32 {
+  .grid(32);
+}
+.grid-33 {
+  .grid(33);
+}
+.grid-34 {
+  .grid(34);
+}
+.grid-35 {
+  .grid(35);
+}
+.grid-36 {
+  .grid(36);
+}
+
+/*.column {
+  display: inline;
+  float: left;
+  margin: 0 @p-grid-margin;
+  overflow: hidden;
+}*/
+.row {
+  width: @p-page-width;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  .row {
+    display: inline-block;
+  }
+}
+
+.column(@num) {
+  .grid(@num);
+}

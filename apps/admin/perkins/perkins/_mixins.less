@@ -1,0 +1,370 @@
+  .box-sizing(@def: border-box) {
+    -webkit-box-sizing:           @def;
+    -moz-box-sizing:              @def;
+    box-sizing:                   @def;
+  }
+
+  .border-radius(@radius: 5px) {
+    -webkit-border-radius:        @radius;
+    -moz-border-radius:           @radius;
+    -ms-border-radius:            @radius;
+    -o-border-radius:             @radius;
+    border-radius:                @radius;
+  }
+
+  .box-shadow(@bsval: 0 6px 6px -6px rgba(0,0,0,0.80), @due: 0 0 0 transparent) {
+    -webkit-box-shadow: @bsval, @due;
+    -moz-box-shadow: @bsval, @due;
+    -ms-box-shadow: @bsval, @due;
+    -o-box-shadow: @bsval, @due;
+    box-shadow: @bsval, @due;
+  }
+
+  .text-shadow(@tsval: 0px 1px 0px rgba(255,255,255,0.80)) {
+    text-shadow: @tsval;
+  }
+
+  .transform(@scale: 1, @rotate: 0, @translateX: 0, @translateY: 0, @skewX: 0, @skewY: 0) {
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; 
+    -ms-transform: scale(@scale) rotate(@rotate) translateX(@translateX) translateY(@translateY) skewX(@skewX) skewY(@skewY);
+    -webkit-transform: scale(@scale) rotate(@rotate) translateX(@translateX) translateY(@translateY) skewX(@skewX) skewY(@skewY);
+    -moz-transform: scale(@scale) rotate(@rotate) translateX(@translateX) translateY(@translateY) skewX(@skewX) skewY(@skewY);
+    -o-transform: scale(@scale) rotate(@rotate) translateX(@translateX) translateY(@translateY) skewX(@skewX) skewY(@skewY);
+    transform: scale(@scale) rotate(@rotate) translateX(@translateX) translateY(@translateY) skewX(@skewX) skewY(@skewY);
+  }
+
+  .transition(@trans: all linear 0.2s) {
+    -webkit-transition: @trans;
+    -moz-transition: @trans;
+    transition: @trans;
+  }
+  
+  #gradient {
+     .horizontal(@startColor: #555, @endColor: #333, @img: none) {
+       /* Legacy browsers */
+       background: @endColor @img;
+       /* Recent browsers */
+       -o-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+       -webkit-background-size: auto auto !important;
+       background-size: 100% 100%;
+       background: @img, -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+       background: @img, -webkit-linear-gradient(right center, @startColor, @endColor);
+       background: @img, -moz-linear-gradient(right center, @startColor, @endColor);
+       background: @img, -o-linear-gradient(left,  @startColor,  @endColor);
+       background: @img, -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+     }
+     .vertical(@startColor: #555, @endColor: #333, @img: none) {
+       /* Legacy browsers */
+       background: @endColor @img;
+       /* Recent browsers */
+       -o-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+       -webkit-background-size: auto auto !important;
+       background-size: 100% 100%;
+       background: @img, -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+       background: @img, -webkit-linear-gradient(@startColor, @endColor);
+       background: @img, -moz-linear-gradient(@startColor, @endColor);
+       background: @img, -o-linear-gradient(top,  @startColor,  @endColor);
+       background: @img, -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+     }
+     .h-line(@startColor: #B0BAC5, @midColor1: #9DA7B2, @midColor2: #919CA8, @endColor: #7E8A98, @img: none) {
+       background: @endColor @img;
+       -o-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+       -webkit-background-size: auto auto !important;
+       background-size: 100% 100%;
+       background: @img, -moz-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+       background: @img, -webkit-gradient(linear, left top, left bottom, color-stop(0%,@startColor), color-stop(50%,@midColor1), color-stop(51%,@midColor2), color-stop(100%,@endColor));
+     }
+   }
+
+  // Buttons
+  .button(@color: #ccc, @text_color: #444, @text_shadow: 0 1px 0 rgba(255,255,255,0.40), @padding: 0.7em 1em, @rounded: 5px, @font_weight: 300) {
+    display: inline-block;
+    padding: @padding;
+    color: @text_color;
+    line-height: 1;
+    border: 1px solid rgba(45, 45, 45, 0.50);
+    margin: 3px 0;
+    background: @color;
+    #gradient > .vertical(@color, darken(@color,10%));
+    .text-shadow(@text_shadow);
+    .border-radius(@rounded);
+    .box-shadow(0 1px 0 rgba(255,255,255,0.40), 0 1px 0 rgba(255,255,255,0.40) inset);
+    font-weight: @font_weight;
+    &:hover {
+      background: darken(@color,10%);
+      #gradient > .vertical(darken(@color,10%), @color);
+      .box-shadow(0 1px 0 rgba(255,255,255,0.40), 0 2px 1px rgba(32,32,32,0.20) inset);
+      color: @text_color;
+      text-decoration: none;
+    }
+  }
+  .call-to-action() {
+    display: inline-block;
+    .box-shadow(0 1px 0 rgba(255,255,255,0.40), 0 1px 0 rgba(255,255,255,0.40) inset);
+    .border-radius();
+    border: 1px solid rgba(45, 45, 45, 0.50);
+    font-size: 2em;
+    line-height: 1;
+    padding: 0.8em;
+    margin: 0.5em 0;
+    letter-spacing: -0.05em;
+    span {
+      position: relative;
+      top: 5px;
+      line-height: 0;
+      font-size: 180%;
+    }
+    &:hover {
+      .box-shadow(0 1px 0 rgba(255,255,255,0.40), 0 2px 1px rgba(32,32,32,0.20) inset);
+      text-decoration: none;
+    }
+  }
+  // Navigation
+  .nav(@parentSide: left, @childSide: left, @padding: 5px 10px, @margin: 0 10px 0 0) {
+    margin: 0;
+    padding: 0;
+    float: @parentSide;
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: @childSide;
+      a {
+        display: block;
+        padding: @padding;
+        margin: @margin;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  // Mixin by malarkey ~ 320 and up
+  .font-size(@size: 16) {
+    @rem: (@size / 10);
+    font-size: @size * 1px;
+    font-size: ~"@{rem}rem";
+  }
+  
+  // Drop Down Menu
+  .dropdown-menu(@border: 1px solid @system) {
+    margin: 0;
+    padding: 5px;
+    line-height: 100%;
+    border: @border;
+    display: inline-block;
+    li {
+      margin: 0;
+      padding: 0;
+      float: left;
+      position: relative;
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 8px 20px;
+      margin: 0;
+    }
+    ul {
+      background: @p-white;
+      visibility: hidden;
+      opacity: 0;
+      .transition();
+      margin: 0;
+      padding: 0;
+      width: 185px;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      border: @border;
+      z-index: 2000;
+    }
+    li:hover > ul {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      .transition();
+      li {
+        float: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    ul ul {
+      left: 181px;
+      top: -3px;
+    }
+    &:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0;
+    }
+    li[data-darr] {
+      a {
+        padding:  8px 25px 8px 20px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        .triangle-down(5px, darken(@system, 20%));
+        right: 7px;
+        top: 0.9em;
+      }
+    }
+    li[data-rarr] {
+      a {
+        padding:  8px 25px 8px 20px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        .triangle-right(5px, darken(@system, 20%));
+        right: 7px;
+        top: 0.75em;
+      }
+    }
+  }
+  // Tag List
+  .tag-list(@bgColor: #EFE394) {
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+    li {
+      list-style: none;
+      position: relative;
+      display: inline-block;
+      margin: 0 0.85em 0 0;
+      &:before {
+        content:"";
+        .border-radius(3px);
+        #gradient > .vertical(@bgColor, darken(@bgColor, 20%));
+        border: 1px solid darken(@bgColor, 30%);
+        width: 19px;
+        height: 19px;
+        position: absolute;
+        z-index: 50;
+        right: -4px;
+        top: 14px;
+        .transform(1, -45deg);
+      }
+      &:after {
+        content:"";
+        .border-radius(100%);
+        width: 8px;
+        height: 8px;
+        background: @p-white;
+        position: absolute;
+        z-index: 150;
+        right: 1px;
+        top: 9px;
+        .box-shadow(0 1px 0 rgba(255,255,255,0.80), inset 0 1px 1px rgba(0,0,0,0.40));
+      }
+      span {
+        display: inline-block;
+        .border-radius(3px);
+        position: relative;
+        z-index: 100;
+        padding: 0.5em 1.7em 0.4em 1em;
+        font-size: 11px;
+        cursor: default;
+        color: darken(@bgColor, 40%);
+        border: 1px solid darken(@bgColor, 30%);
+        border-right: none;
+        #gradient > .vertical(@bgColor, darken(@bgColor, 20%));
+        .text-shadow(0 1px 0 rgba(255,255,255,0.40));
+        .box-shadow(0 1px 0 rgba(255,255,255,0.40), 0 1px 0 rgba(255,255,255,0.40) inset);
+        font-weight: bold;
+      }
+      a {
+        font-weight: bold;
+        color: darken(@bgColor, 45%);
+        font-size: 11px;
+        &:hover {
+          text-decoration: underline;
+          color: darken(@bgColor, 40%);
+        }
+      }
+    }
+  }
+  /**
+   *  CSS3 text columns mixin
+   */
+  
+   .content-columns(@count: 2) {
+     -webkit-column-count:         @count;
+     -moz-column-count:            @count;
+     -o-column-count:              @count;
+     column-count:                 @count;
+     -webkit-column-gap:           @p-baseline;
+     -moz-column-gap:              @p-baseline;
+     -o-column-gap:                @p-baseline;
+     column-gap:                   @p-baseline;
+   }
+  
+  // Tooltip
+  .tooltip(@color: @p-white, @bgColor: rgba(0,0,0,0.80), @tipBorder: 1px dotted #333, @data: attr(data-tooltip)) {
+    border-bottom: @tipBorder;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      visibility: hidden;
+      opacity: 0;
+      content: @data;
+      position: absolute;
+      white-space: nowrap;
+      background: @bgColor;
+      padding: 3px 7px;
+      color: @color;
+      .border-radius(3px);
+      .transition();
+    }
+    &:hover {
+      &:after {
+        visibility: visible;
+        opacity: 1;
+        .transition();
+        z-index: 2500;
+      }
+    }
+  }
+  
+  /*
+  * Helpers
+  */
+  
+  .btn, input[type="submit"], button {
+    .button();
+  }
+  .sbtn {
+    font-size: 11px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 5px 5px;
+    .border-radius(3px);
+  }
+  h1 a.btn, h2 a.btn, h3 a.btn {
+    padding: 25px 30px 20px !important;
+  }
+  
+  /*
+    TODO Pills Menu
+  */
+
+  .h-menu {
+    .nav();
+  }
+  .v-menu {
+    .nav(none, none, 10px 5px 5px, 0 0 -1px 0);
+  }
+  .t-menu {
+    .nav(left, left, 10px 20px 4px, 0 -1px 0 0);
+  }

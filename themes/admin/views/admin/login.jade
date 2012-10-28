@@ -1,0 +1,11 @@
+extends ../layout/index
+block body
+
+  h2 PlumaJS
+
+  input(type='username', name="user[username]", placeholder='username')
+  input(type='password', name="user[password]", placeholder='password')
+
+  span(class='loginBtn') Login
+
+  script(src='/javascript/views/admin/login.js')
