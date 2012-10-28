@@ -10,9 +10,9 @@ module.exports = function (_app) {
 }
 
 /**
- * @param   req     {Object}
- * @param   res     {Object}
- * @param   next    {Object}
+ * @param   {Object}  req
+ * @param   {Object}  res
+ * @param   {Object}  next
  *
  * @api     public
  *
@@ -22,13 +22,13 @@ controller.dashboard = function (req, res, next) {
   var s = {};
   s.template = 'admin/dashboard'
 
-  res.render(s.template)
+  res.render(s.template, { theme : 'admin'})
 }
 
 /**
- * @param   req     {Object}
- * @param   res     {Object}
- * @param   next    {Object}
+ * @param   {Object}  req
+ * @param   {Object}  res
+ * @param   {Object}  next
  *
  * @api     public
  *
@@ -40,3 +40,4 @@ controller.login = function (req, res, next) {
 
   res.render(s.template)
 }
+

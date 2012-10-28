@@ -1,5 +1,6 @@
 
 /node_modules
+/lib/settings_old.js
 
 # Stylus main.css
 /themes/bootstrap_basic/public/stylesheets/main.css
