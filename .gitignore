@@ -5,6 +5,9 @@
 # Stylus main.css
 /themes/bootstrap_basic/public/stylesheets/main.css
 
+# Admin app.css
+/apps/admin/public/stylesheets/app.css
+
 # OS X Users, anyone?
 .DS_Store
 

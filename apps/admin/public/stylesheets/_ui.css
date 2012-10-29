@@ -178,30 +178,30 @@
 .ui-icon {
   width: 16px;
   height: 16px;
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-widget-content .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-widget-header .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-state-default .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-state-active .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-state-highlight .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url(/images/ui-icons.png);
+  background-image: url(/admin/images/ui-icons.png);
 }
 /* positioning */
 .ui-icon-carat-1-n {

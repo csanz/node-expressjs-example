@@ -22,7 +22,7 @@ controller.dashboard = function (req, res, next) {
   var s = {};
   s.template = 'admin/dashboard'
 
-  res.render(s.template, { theme : 'admin'})
+  res.render(s.template)
 }
 
 /**
