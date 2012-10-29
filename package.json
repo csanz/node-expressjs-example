@@ -5,7 +5,7 @@
   , "repository"        : "git://github.com/csanz/plumajs.git"
   , "author"            : "Christian Sanz <chrissanz@gmail.com>"
   , "dependencies"      : {
-      "express"         : "git://github.com/hermanjunge/express.git"
+      "express"         : "3.0.0"
     , "jade"            : "0.25.x"
     , "less-middleware" : "0.1.8"
     , "mongoose"        : "2.5.10"

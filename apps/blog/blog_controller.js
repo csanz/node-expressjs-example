@@ -8,7 +8,7 @@ var controller = {}
 // Constructor
 module.exports = function (_app) {
   app         = _app
-  db          = app.set('db')
+  db          = app.get('db')
   BlogPost    = db.model('BlogPost')
   return controller
 }

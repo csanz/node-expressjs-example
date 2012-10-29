@@ -5,7 +5,8 @@ module.exports = function (app) {
   var blog = require('./blog_controller')(app)
 
   // Load the routes into `app`
-  app.get('/blog', blog.latest)
+  // Remember, all routes were stripped of prefix `blog`
+  app.get('/', blog.latest)
 
   return app
 }
