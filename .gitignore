@@ -1,11 +1,8 @@
-
 /node_modules
 /lib/settings_old.js
 
-# Stylus main.css
+# Compiled stylesheets
 /themes/bootstrap_basic/public/stylesheets/main.css
-
-# Admin app.css
 /apps/admin/public/stylesheets/app.css
 
 # OS X Users, anyone?
