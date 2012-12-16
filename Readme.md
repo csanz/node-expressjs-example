@@ -1,15 +1,7 @@
-# plumajs
+# expressjs-blog
 
-plumajs is a super light, super simple developer-friendly blog app built on Node.js
+expressjs-blog is a super light, super simple developer-friendly blog app built on Node.js
 
-![Screenshot](https://github.com/csanz/plumajs/raw/master/public/images/plumajs.png)
+![Screenshot](https://github.com/csanz/plumajs/raw/master/public/images/sample.png)
 
-# Contributors
 
-* [@csanz](http://github.com/carloselias)
-* [@hermanjunge](http://github.com/hermanjunge)
-* [@carloselias](http://github.com/carloselias)
-
-# Contact
-
-* https://twitter.com/plumajs
