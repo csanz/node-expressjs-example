@@ -1,0 +1,2 @@
+
+curl 'http://localhost:3000/create' -H 'Origin: http://localhost:3000' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.9' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: */*' -H 'Referer: http://localhost:3000/' -H 'X-Requested-With: XMLHttpRequest' -H 'Connection: keep-alive' --data 'title=fads&body=fads' --compressed

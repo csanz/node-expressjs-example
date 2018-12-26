@@ -14,14 +14,14 @@
 }
 .edit-mode .hide {
   display: block !important;
+  width: 120px;
 }
 .edit-mode .show {
   display: none !important;
+  width: 150px;
 }
 ul#flash {
-  position: fixed;
-  top: 10px;
-  left: 15px;
+  fixed: top 10px left 15px;
   z-index: 200;
   margin: 0;
   padding: 0;
@@ -31,13 +31,9 @@ ul#flash li {
   margin: 8px 0;
   padding: 8px 15px;
   border: 1px solid #a9a9a9;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 12px;
   background: #fff;
-  -webkit-box-shadow: 0 0 4px #eee;
-  -moz-box-shadow: 0 0 4px #eee;
   box-shadow: 0 0 4px #eee;
 }
 h2 {

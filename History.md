@@ -1,6 +1,10 @@
 TO-DO
   * Add friggin validation
 
+0.1.9
+ * Upgraded express, mongoose, jade/pug, pusher, environment
+ * Added dotenv
+
 0.1.8
 
  * Added Bootrap support
@@ -49,3 +53,4 @@ TO-DO
 0.1.0 / 2011-05-10
 
   * Added application. 
+

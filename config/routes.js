@@ -1,21 +1,22 @@
 module.exports = function(app){
 
-  var home   = require('../app/controllers/home_controller')(app);
-  
-  //  Load database and pass it down to the controllers
-  
-  var db = app.set('db');
+  console.log("Setting up controllers...".input)
+
+  var home = require('../app/controllers/home_controller')(app);
+
+  console.log("Setting up routes...".input)
 
   //  Load Root
   
-  app.get('/', home.index); // *Root
-  app.get('/about', home.load.bind(null, 'home/about'));
+  app.get('/', home.index); 
   
-  //  Load Blog Controller + Routes
+  //  Load Post Controller + Routes
   
   app.get('/posts', home.index); 
   app.post('/create', home.create);
   app.post('/update', home.update);
   app.post('/delete', home.delete);
+
+  return app;
 
 }

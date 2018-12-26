@@ -1,26 +1,40 @@
 {
-    "name"        : "expressjs-blog"
-  , "version"     : "0.1.8"
-  , "homepage"    : "http://node-blog-example.herokuapp.com/"
-  , "description" : "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery"
-  , "repository"  : "git@github.com:csanz/expressjs-blog.git"
-  , "author"      : "Christian Sanz <chrissanz@gmail.com>"
-  , "dependencies": {
-        "express"           : "2.5.4"
-      , "express-messages"  : "0.0.x"
-      , "express-resource"  : "0.2.4"
-      , "express-mongoose"  : "0.0.x"
-      , "express-expose"    : "0.2.2"
-      , "stylus"            : "0.13.x"
-      , "mongoose"          : "2.5.10"
-      , "jade"              : "0.25.x"
-      , "stylus"            : "0.22.x"
-      , "nib"               : "0.3.x"
-      , "pusher"            : "0.0.x"
-    }
-  , "main"    : "./index.js"
-  , "engines" : { 
-      "node": "0.6.x" 
-    , "npm" : "1.0.x"
-    }
+    "name": "expressjs-blog",
+    "version": "0.1.8",
+    "homepage": "http://node-blog-example.herokuapp.com/",
+    "description": "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery",
+    "repository": "git@github.com:csanz/expressjs-blog.git",
+    "author": "Christian Sanz <chrissanz@gmail.com>",
+    "engines": {
+        "node": ">=8.9.4"
+    },
+    "dependencies": {
+        "axios": "^0.17.1",
+        "body-parser": "1.18.x",
+        "colors": "*",
+        "cookie-parser": "~1.4.3",
+        "errorhandler": "1.5.0",
+        "debug": "~2.6.3",
+        "dotenv": "^4.0.0",
+        "dotenv-expand": "^4.2.0",
+        "express": "^4.16.2",
+        "express-messages": "0.0.x",
+        "express-mongoose": "0.0.x",
+        "express-resource": "0.2.4",
+        "express-expose": "0.3.4",
+        "express-session": "1.15.6",
+        "express-partials": "0.3.0",
+        "forever-monitor": "1.7.1",
+        "fs-extra": "^7.0.1",
+        "install": "^0.10.2",
+        "jade": "~1.11.0",
+        "mongoose": "^5.0.3",
+        "morgan": "^1.9.1",
+        "nib": "1.1.2",
+        "pusher": "2.2.0",
+        "stylus": "^0.54.5",
+        "winston": "3.1.0",
+        "winston-daily-rotate-file": "3.5.1"
+    },
+    "main": "./index.js"
 }

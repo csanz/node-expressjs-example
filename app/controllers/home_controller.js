@@ -1,27 +1,17 @@
 // Set all global variables 
 
-var pusher = require('pusher')
-  , controller = {}
-  , app
-  , db
+var controller = {}
+  , _app = {};
 
 // Constructor
 
-module.exports = function (_app) {
-  app = _app
-  db  = app.set('db')
+module.exports = function (app) {
+  _app = app
   return controller
 }
 
-controller.load = function(template, req, res, next){
-  if(!template) return next(new Error("missing template"))
-  res.render(template, {
-      layout     : '../layout/index'
-  })
-}
-
 /**
- * Index BlogPost
+ * Index 
  *
  * @param {Request Object} req
  * @param {Response Object} res
@@ -34,20 +24,29 @@ controller.load = function(template, req, res, next){
 
 controller.index = function(req, res, next){
 
+  console.log("Loading index page".info)
+
   // expose pusher key
   
   res.expose({ 
       app_key   : req.app.set('pusher_key') 
-    , channel   : 'blog_post'
-    , events    : 'post'
+    , app_id    : req.app.set('pusher_appid')
+    , channel   : req.app.set('pusher_channel')
+    , cluster   : req.app.set('pusher_cluster')
+    , event     : 'post'
   }, 'PUSHER')
 
-  // render template
+  _app.settings.db.posts.getLatestPosts(found)
 
-  res.render('home/index', {
-      layout     : '../layout/index'
-    , posts   : db.posts.getLatestPosts()
-  })
+  function found(err, data){
+
+    // Render
+
+    res.render('home/index', {
+      posts : data
+    })
+
+  }
 
 }
 
@@ -64,30 +63,60 @@ controller.index = function(req, res, next){
 
 controller.create = function(req, res, next){
 
-  var BlogPost = db.main.model('BlogPost')
-    , Post     = new BlogPost(req.param('post'));
+  // Set variables 
 
-  Post.save(postSaved)
+  var BlogPost   = {}
+    , Post       = {}
+    , Validation = {}
+    , errors     = {};
+
+  // Initialize variables 
+
+  PostModel  = _app.settings.db.main.model('Post');
+  Post       = new PostModel(req.body);
+  Validation = Post.validateSync();
+
+  // Do validation
+
+  if(Validation){
+
+    // Save all the errors and send them back to the client
+
+    Object.keys(req.body).forEach(function(key) {
+
+      if(Validation['errors'][key])
+        errors[key] = Validation['errors'][key].message
+
+    });
+
+    res.send({validation_errors: errors})
+
+  }else{
+
+    Post.save(postSaved);
+
+  }
 
   function postSaved(err){
+
     if (err) return next(err)
-    res.partial('home/post', { object: Post }, function(err, html){
+
+    console.log("Saved!".success)
+    res.render('home/_post', { layout : false, post : Post }, function(err, html){
+
       if (err) return next(err)
 
-      // Send the hook
-
+      console.log("Calling pusher via hook...".input)
       req.app.emit('event:create_blog_post', { prepend: html, to: '#posts' }, req)
-
-      // Send response
-
       return res.send({ prepend: html, to: '#posts' });
+
     });
   }
 }
 
 
 /**
- * Update BlogPost
+ * Update Post
  *
  * @param {Request Object} req
  * @param {Response Object} res
@@ -99,27 +128,23 @@ controller.create = function(req, res, next){
 
 controller.update = function(req, res, next){
   
-  var BlogPost = db.main.model('BlogPost')
-    , Post     = req.param('post');
+  var PostModule = _app.settings.db.main.model('Post')
+    , PostUpdate = req.body;
 
-  BlogPost.update( {_id : Post.id } , Post, postUpdated);
+  PostModule.update( {_id : PostUpdate.id } , PostUpdate, postUpdated);
 
   function postUpdated(err){
+
     if (err) return next(err)
-
-      // Send the hook
       
-      req.app.emit('event:update_blog_post', {update: Post, target : Post.id }, req)
-
-      // Send response
-
-      res.send({ update: Post, target : Post.id });
+      req.app.emit('event:update_blog_post', {update: PostUpdate, target : PostUpdate.id }, req)
+      res.send({ update: PostUpdate, target : PostUpdate.id });
   }
 }
 
 
 /**
- * Delete BlogPost
+ * Delete Post
  *
  * @param {Request Object} req
  * @param {Response Object} res
@@ -131,19 +156,18 @@ controller.update = function(req, res, next){
 
 controller.delete = function(req, res, next){
   
-  var BlogPost = db.main.model('BlogPost');
+  var PostModule = _app.settings.db.main.model('Post')
+    , _id        = req.body.id;
 
-  BlogPost.remove( {_id : req.param('id')} , postRemoved);
+  console.log("_id:", _id)
+
+  PostModule.remove( {_id : _id} , postRemoved);
 
   function postRemoved(err){
+
     if (err) return next(err)
-
-      // Send the hook
-      
-      req.app.emit('event:delete_blog_post', {remove: true, target : req.param('id') }, req)
-
-      // Send response
-
-      res.send({ remove: true,  target : req.param('id') });
+ 
+      req.app.emit('event:delete_blog_post', {remove: true, target : _id }, req)
+      res.send({ remove: true,  target : _id });
   }
 }
