@@ -4,6 +4,8 @@ nodejs-blog is a super light, super simple developer-friendly blog app built on 
 
 ![Screenshot](https://raw.github.com/csanz/nodejs-blog/master/public/images/sample.png)
 
+### See it in action
+
 ![Animation](https://raw.github.com/csanz/nodejs-blog/master/public/images/recording.gif)
 
 ### Installation
@@ -18,7 +20,7 @@ nodejs-blog is a super light, super simple developer-friendly blog app built on 
 * Create Pusher account and update .env
 * Update .env with all other variables
 
-## Run Application
+## Run the app
 
     $ node .
 
