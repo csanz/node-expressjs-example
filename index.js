@@ -1,12 +1,6 @@
-/**
- *  Load external modules / see readme for bundle instructions
- */
- 
 var path = require('path')
 
 require('./lib/exceptions')
-
-//  Load boot file and fire away!
 
 var app = require('./config/init')();
 var port = process.env.PORT || 3000;

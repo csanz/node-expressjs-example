@@ -1,9 +1,9 @@
 {
-    "name": "expressjs-blog",
+    "name": "expressjs-example",
     "version": "0.1.8",
     "homepage": "http://node-blog-example.herokuapp.com/",
-    "description": "ExpressJS sample blog that uses Mongoose, Jade, Stylus and AJAX/jQuery",
-    "repository": "git@github.com:csanz/expressjs-blog.git",
+    "description": "Expressjs example app that uses Mongoose, Jade, Stylus and AJAX/jQuery",
+    "repository": "git@github.com:csanz/expressjs-example.git",
     "author": "Christian Sanz <chrissanz@gmail.com>",
     "engines": {
         "node": ">=8.9.4"
@@ -23,7 +23,6 @@
         "express-resource": "0.2.4",
         "express-expose": "0.3.4",
         "express-session": "1.15.6",
-        "express-partials": "0.3.0",
         "forever-monitor": "1.7.1",
         "fs-extra": "^7.0.1",
         "install": "^0.10.2",
