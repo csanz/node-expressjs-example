@@ -1,6 +1,6 @@
-# nodejs-blog
+# expressjs-example
 
-nodejs-blog is a super light, super simple developer-friendly blog app built on Node.js
+expressjs-example is a super light, super simple developer-friendly app built on Node.js, feel free to copy it and build your own application. 
 
 ![Screenshot](https://raw.github.com/csanz/nodejs-blog/master/public/images/sample.png)
 
