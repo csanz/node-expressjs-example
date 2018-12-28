@@ -4,10 +4,6 @@ expressjs-example is a super light, super simple developer-friendly app built on
 
 ![Screenshot](https://raw.github.com/csanz/nodejs-blog/master/public/images/sample.png)
 
-### See it in action
-
-![Animation](https://raw.github.com/csanz/nodejs-blog/master/public/images/recording.gif)
-
 ### Installation
 
     Install node, npm, mongodb
