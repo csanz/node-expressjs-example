@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    title Express-Example
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="Express-Example")
+    meta(name="author", content="you")
+
+    script(src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    script(src="https://js.pusher.com/4.3/pusher.min.js")
+
+    link(href="/stylesheets/bootstrap.css", rel="stylesheet")
+    link(href="/stylesheets/bootstrap-responsive.css", rel="stylesheet")
+    
+    script(src= '/javascript/main.js')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body
+
+    include header
+
+    block content
+
+    include footer
+    

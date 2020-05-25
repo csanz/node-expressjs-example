@@ -9,8 +9,9 @@ module.exports = function(app){
   var dblink = process.env.MONGOHQ_URL || 'mongodb://localhost/express-sample'
 
   const db = mongoose.createConnection(dblink, {
-  autoIndex: process.env.AUTOINDEX || true
-  , useNewUrlParser: true 
+    autoIndex: process.env.AUTOINDEX || true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true
   });
 
   //Save reference to database connection

@@ -1,4 +1,4 @@
-// Set all global variables 
+// Set all global variables
 
 var controller = {}
   , _app = {};
@@ -11,7 +11,7 @@ module.exports = function (app) {
 }
 
 /**
- * Index 
+ * Index
  *
  * @param {Request Object} req
  * @param {Response Object} res
@@ -27,9 +27,9 @@ controller.index = function(req, res, next){
   console.log("Loading index page".info)
 
   // expose pusher key
-  
-  res.expose({ 
-      app_key   : req.app.set('pusher_key') 
+
+  res.expose({
+      app_key   : req.app.set('pusher_key')
     , app_id    : req.app.set('pusher_appid')
     , channel   : req.app.set('pusher_channel')
     , cluster   : req.app.set('pusher_cluster')
@@ -42,7 +42,7 @@ controller.index = function(req, res, next){
 
     // Render
 
-    res.render('home/index', {
+    res.render('index', {
       posts : data
     })
 
@@ -63,14 +63,14 @@ controller.index = function(req, res, next){
 
 controller.create = function(req, res, next){
 
-  // Set variables 
+  // Set variables
 
   var BlogPost   = {}
     , Post       = {}
     , Validation = {}
     , errors     = {};
 
-  // Initialize variables 
+  // Initialize variables
 
   PostModel  = _app.settings.db.main.model('Post');
   Post       = new PostModel(req.body);
@@ -102,7 +102,7 @@ controller.create = function(req, res, next){
     if (err) return next(err)
 
     console.log("Saved!".success)
-    res.render('home/_post', { layout : false, post : Post }, function(err, html){
+    res.render('_post', { layout : false, post : Post }, function(err, html){
 
       if (err) return next(err)
 
@@ -127,7 +127,7 @@ controller.create = function(req, res, next){
  */
 
 controller.update = function(req, res, next){
-  
+
   var PostModule = _app.settings.db.main.model('Post')
     , PostUpdate = req.body;
 
@@ -136,7 +136,7 @@ controller.update = function(req, res, next){
   function postUpdated(err){
 
     if (err) return next(err)
-      
+
       req.app.emit('event:update_blog_post', {update: PostUpdate, target : PostUpdate.id }, req)
       res.send({ update: PostUpdate, target : PostUpdate.id });
   }
@@ -155,7 +155,7 @@ controller.update = function(req, res, next){
  */
 
 controller.delete = function(req, res, next){
-  
+
   var PostModule = _app.settings.db.main.model('Post')
     , _id        = req.body.id;
 
@@ -166,7 +166,7 @@ controller.delete = function(req, res, next){
   function postRemoved(err){
 
     if (err) return next(err)
- 
+
       req.app.emit('event:delete_blog_post', {remove: true, target : _id }, req)
       res.send({ remove: true,  target : _id });
   }

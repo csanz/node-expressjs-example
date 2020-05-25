@@ -9,25 +9,25 @@ module.exports = function(app){
   }
 
   NotFound.prototype.__proto__ = Error.prototype;
-   
+
   // Catch all
-  
+
   app.all('*', function notFound(req, res, next) {
      throw new NotFound;
   });
 
   app.use(function(err, req, res, next) {
     if (err instanceof NotFound) {
-      res.render('home/404');
+      res.render('404');
     } else {
       res.status(500);
       console.log(err);
-      res.render('home/500', {
+      res.render('500', {
         error: err
       });
     }
   });
-  
+
   return app;
-  
+
 }

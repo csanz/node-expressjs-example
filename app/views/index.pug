@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+  script!= javascript
+  p
+  .container
+    .row
+      .span4
+        h2 Add new
+        #alert.alert.alert-error(style="display: none") Please check required field
+        form.well(action= '/create', method= 'post', id= 'create')
+          fieldset
+            .controls
+              label Title
+              input.span3(type="text", name= 'title')
+              label Body
+              textarea.span3(name = 'body')
+          .form-actions
+            input.btn(type = 'submit', value = 'Save!')
+      .span4
+        h2 Posts
+        #noposts.alert.alert-error(style="display: none") no posts
+        #posts
+          - if (posts.length)
+            each post in posts
+              include ./_post
+          - else

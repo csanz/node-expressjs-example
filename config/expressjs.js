@@ -16,7 +16,7 @@ const express       = require('express')
     , morgan        = require('morgan');
 
 module.exports = function(app){
- 
+
   // Set header
 
   app.use(function(req, res, next) {
@@ -38,7 +38,7 @@ module.exports = function(app){
   app.use(cookieParser());
   app.use(errorHandler({dumpException: true, showStack: true}));
   app.use(session({
-    secret: process.env.SESSION_KEY,
+    secret: process.env.SESSION_KEY || 'keyboard cat',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }
@@ -47,7 +47,7 @@ module.exports = function(app){
   //  Add template engine
 
   app.set('views', path.join(__dirname, '/../app/views'));
-  app.set('view engine', 'jade');
+  app.set('view engine', 'pug');
 
   // Add style engine
 
