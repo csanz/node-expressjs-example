@@ -23,7 +23,7 @@
         "express-mongoose": "0.0.x",
         "express-resource": "0.2.4",
         "express-session": "1.15.6",
-        "pug": "^2.0.4",
+        "pug": "^3.0.1",
         "mongoose": "^5.9.14",
         "morgan": "^1.9.1",
         "nib": "1.1.2",
